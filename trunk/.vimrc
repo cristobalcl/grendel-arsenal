@@ -27,6 +27,6 @@ map <F6> :copen<CR>
 map <F7> :cp<CR>
 map <F8> :cn<CR>
 
-set spelllang=es,us
+set spelllang=es,en_us
 set spellsuggest=10
-map <C-F5> :set spell<CR>
+map <C-F5> :setlocal spell<CR>
