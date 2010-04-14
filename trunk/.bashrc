@@ -1,4 +1,4 @@
-# Add to your "~/.bashrc".
+# Append to your "~/.bashrc".
 
 export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]$ "
 export EDITOR=vim
