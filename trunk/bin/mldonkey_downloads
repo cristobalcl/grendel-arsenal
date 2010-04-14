@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#(echo vd; sleep 0.5; echo q; sleep 0.5) | telnet localhost 4000
+echo -e "vd\nq" | nc 127.0.0.1 4000
