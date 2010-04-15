@@ -1,0 +1,5 @@
+#summary Work with Konsole/Bash/GNU/Linux.
+
+= Introduction =
+
+Daily working with the Linux console, i.e. [http://en.wikipedia.org/wiki/Bash Bash] shell in an [http://en.wikipedia.org/wiki/GNU GNU]/[http://en.wikipedia.org/wiki/Linux Linux] operating system. And perhaps inside the [http://en.wikipedia.org/wiki/Konsole Konsole] terminal or [http://en.wikipedia.org/wiki/Yakuake Yakuake].
