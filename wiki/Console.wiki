@@ -7,3 +7,24 @@ Daily working with the Linux console, i.e. [http://en.wikipedia.org/wiki/Bash Ba
 
 = Configuration =
 TODO
+
+= Yakuake =
+
+== Installation ==
+Yakuake:
+{{{
+sudo aptitude install yakuake
+}}}
+
+== Usage ==
+Execute Yakuake (only first time):
+  * `Alt+F2`, write "yakuake" and `INTRO`.
+
+Open Yakuake:
+  * `F12`
+
+Create new tabs:
+  * `CTRL`+`n`
+
+Navigate throw tabs:
+  * `SHIFT`+`Left` or `SHIFT`+`Right`
