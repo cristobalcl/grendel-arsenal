@@ -1,4 +1,5 @@
 #summary Work with Vim.
+#labels Featured
 
 = Introduction =
 
@@ -7,9 +8,19 @@ Basic working with Vim, tips and tricks.
 = Modes =
 
 == Normal ==
-When you enter in Vim, you are in *normal* mode. You _can not_ insert text in normal mode, but move through texts, buffers, tabs,.. , and execute commands. You always can return to normal mode pressing `ESC`.
+When you enter in Vim, you are in *normal* mode. You _can not_ insert text in normal mode, but move through texts, buffers, tabs,.. , and execute commands like copy and paste, search and replace, open and safe files, etc.
+
+Independently the mode you are, you always can return to normal mode pressing `ESC`.
 
 _Normally_ you _want_ to be in *normal* mode.
 
 == Insert ==
-From *normal* mode you can switch to *insert* mode to insert text pressing (for example) `i`. In *insert* mode all that you type will be inserted in the text as in any test editor.
+From *normal* mode you can switch to *insert* mode to insert text, pressing `i` (for example). In *insert* mode everything you type will be inserted in the text as in any other text editor.
+
+There are many ways to switch to insert mode:
+  * Insert here: pressing `i`.
+  * Insert at the beginning of the line: pressing `I` (capital `i`).
+  * Insert after the character where the cursor is: pressing `a`.
+  * Insert at the end of the line: pressing `A`.
+  * Insert an empty line below the line the cursor is, and insert at it: pressing `o`.
+  * Insert an empty line over the line the cursor is, and insert at it: pressing `O` (capital `o`).
