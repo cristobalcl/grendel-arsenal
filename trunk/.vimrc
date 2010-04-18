@@ -30,3 +30,4 @@ map <F8> :cn<CR>
 set spelllang=es,en_us
 set spellsuggest=10
 map <C-F5> :setlocal spell<CR>
+imap <M-F5> <ESC>z=
