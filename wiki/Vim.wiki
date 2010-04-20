@@ -24,3 +24,21 @@ There are many ways to switch to insert mode:
   * Insert at the end of the line: pressing `A`.
   * Insert an empty line below the line the cursor is, and insert at it: pressing `o`.
   * Insert an empty line over the line the cursor is, and insert at it: pressing `O` (capital `o`).
+
+= Files =
+
+== Open a file ==
+From command line:
+{{{
+vim file.txt
+}}}
+
+From command line and go to a line:
+{{{
+vim file.txt +26
+}}}
+
+From normal mode:
+{{{
+:e file.txt
+}}}
