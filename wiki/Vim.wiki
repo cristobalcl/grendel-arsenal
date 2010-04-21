@@ -51,15 +51,15 @@ In normal mode, press `.` (dot).
 Example:
   * You have this text:
 {{{
-double one = 1.;
-double two = 2.;
-double thr = 3.;
+double one=1111.;
+double two=2222.;
+double thr=3333.;
 }}}
   * In normal mode (go with `ESC`) press:
 {{{
-gg/ =<ENTER>dt;
+gg/=<ENTER>dt;
 }}}
-  * With that you have deleted "` = 1.`" from the first line.
+  * With that you have deleted "`=1111.`" from the first line.
   * Now, you want to repeat the same action of deleting in the two other lines. Press:
 {{{
 n.n.
