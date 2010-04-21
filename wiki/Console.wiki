@@ -24,7 +24,10 @@ Open Yakuake:
   * `F12`
 
 Create new tabs:
-  * `CTRL`+`n`
+  * `CTRL+n`
+
+Close tab (bash logout):
+  * `CTRL+d`
 
 Navigate throw tabs:
   * `SHIFT`+`Left` or `SHIFT`+`Right`
