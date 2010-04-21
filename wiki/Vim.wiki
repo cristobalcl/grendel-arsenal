@@ -42,3 +42,8 @@ From normal mode:
 {{{
 :e file.txt
 }}}
+
+= Useful plugins =
+
+== C++ completion ==
+  * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
