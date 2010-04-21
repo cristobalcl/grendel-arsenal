@@ -51,22 +51,20 @@ In normal mode, press `.` (dot).
 Example:
   * You have this text:
 {{{
-double one=1111.;
-double two=2222.;
-double thr=3333.;
+Hello world!
+This is a test.
+Goodbye.
 }}}
   * In normal mode (go with `ESC`) press:
 {{{
-gg/=<ENTER>dt;
+I// <ESC>
 }}}
-  * With that you have deleted "`=1111.`" from the first line. In detail:
-    * "`gg`" go to the beginning of the file.
-    * "`/=<ENTER>`" search the char "`=`".
-    * "`dt;`" delete from here to the char "`;`".
-  * Now, you want to repeat the same action of deleting in the two other lines. Press:
+  * With that you have inserted "`//`" at the beginning of the line that the cursor is.
+  * Now, you want to repeat the same action of deleting in the other two lines. Go to another line and press:
 {{{
-n.n.
+.
 }}} 
+  * Same in the last line.
 
 = Useful plugins =
 
