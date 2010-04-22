@@ -13,5 +13,6 @@ alias ...='cd ../..'
 alias -- ,='cd -'
 alias -- +='pushd .'
 alias -- -='popd'
+alias epwd='ls "`pwd`" -db'
 
 ? () { echo "$*" | bc -l; }
