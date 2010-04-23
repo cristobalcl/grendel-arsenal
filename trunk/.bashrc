@@ -7,7 +7,7 @@ export CDPATH=$CDPATH:$HOME
 
 shopt -s cdspell
 
-alias l='ls -la'
+alias l='ls -hla'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias -- ,='cd -'
