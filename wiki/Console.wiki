@@ -31,3 +31,11 @@ Close tab (bash logout):
 
 Navigate throw tabs:
   * `SHIFT`+`Left` or `SHIFT`+`Right`
+
+= Working with files =
+
+== Rename ==
+In Ubuntu:
+{{{
+rename 's/[expr1]/[expr2]/[g]' [files]
+}}}
