@@ -1,0 +1,8 @@
+#summary FFmpeg tips and tricks.
+
+= Tips =
+
+== Convert video to image frames ==
+{{{
+ffmpeg -i video_input.mp4 frame_%04d.png
+}}}
