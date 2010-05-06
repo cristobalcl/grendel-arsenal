@@ -42,5 +42,5 @@ rename 's/[expr1]/[expr2]/[g]' [files]
 
 == Who is using a file ==
 {{{
-fuser -muv /media/240E-90AF/
+fuser -muv [file]
 }}}
