@@ -1,0 +1,17 @@
+#summary Tips and tricks for developers in GNU/Linux.
+
+= Debug =
+
+== Valgrind ==
+Compile with debug info:
+{{{
+gcc -o test -g test.c
+}}}
+
+Then:
+{{{
+valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./test
+}}}
+
+References:
+  * [http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/ Basic Valgrind Tutorial]
