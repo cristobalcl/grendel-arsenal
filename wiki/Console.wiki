@@ -32,10 +32,15 @@ Close tab (bash logout):
 Navigate throw tabs:
   * `SHIFT`+`Left` or `SHIFT`+`Right`
 
-= Working with files =
+= Working with files and directories =
 
 == Rename ==
 In Ubuntu:
 {{{
 rename 's/[expr1]/[expr2]/[g]' [files]
+}}}
+
+== Who is using a file ==
+{{{
+fuser -muv /media/240E-90AF/
 }}}
