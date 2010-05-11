@@ -43,6 +43,15 @@ From normal mode:
 :e file.txt
 }}}
 
+= Characters =
+
+== Insert character by its number value ==
+{{{
+<C-V>, [Number in decimal, octal or hexadecimal]
+}}}
+
+[http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-V_digit Reference]
+
 = Repetitions =
 
 == Repeat last edition ==
