@@ -21,9 +21,11 @@ iabbr ssect \subsection{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
 iabbr frm \frame<CR>{<CR>\frametitle{!cursor!}<CR>}<ESC>:call search('!cursor!','b')<CR>cf!
 
-iabbr fig \begin{figure}<CR>!cursor!<CR>\end{figure}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr fg \begin{figure}<CR>!cursor!<CR>\end{figure}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr cntr \begin{center}<CR>!cursor!<CR>\end{center}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr xfg \begin{figure}<CR>\centering<CR>\caption{!cursor!}<CR>\label{fig:XXX}<CR>\end{figure}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr imag \includegraphics[scale=0.5]{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr rf \ref{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
 iabbr ddef \newtheorem{Definition}{Definición}
 iabbr def \begin{Definition}<CR>!cursor!<CR>\end{Definition}<ESC>:call search('!cursor!','b')<CR>cf!
