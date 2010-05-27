@@ -1,5 +1,14 @@
 #summary Tips and tricks for developers in GNU/Linux.
 
+= Code repository =
+
+== Subversion ==
+
+=== New tag ===
+{{{
+svn copy https://grendel-arsenal.googlecode.com/svn/trunk/ https://grendel-arsenal.googlecode.com/svn/tags/0.1.0 -m "Version 0.1.0 tag."
+}}}
+
 = Debug =
 
 == Valgrind ==
