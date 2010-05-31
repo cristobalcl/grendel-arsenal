@@ -80,7 +80,6 @@ I// <ESC>
 = External commands =
 
 == Shell ==
-
 {{{
 :sh
 }}}
@@ -92,7 +91,13 @@ I// <ESC>
 
 == Insert command output ==
 {{{
-:r! [COMMAND]
+:r![COMMAND]
+}}}
+
+== Execute command on the editing file ==
+Use `%` as the filename. For example, to count how many words are in the file you are editing:
+{{{
+:!wc %
 }}}
 
 = Useful plugins =
