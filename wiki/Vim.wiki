@@ -1,6 +1,8 @@
 #summary Work with Vim.
 #labels Featured
 
+<wiki:toc />
+
 = Introduction =
 
 Basic working with Vim, tips and tricks.
@@ -74,6 +76,24 @@ I// <ESC>
 .
 }}} 
   * Same in the last line.
+
+= External commands =
+
+== Shell ==
+
+{{{
+:sh
+}}}
+
+== Execute external command ==
+{{{
+:![COMMAND]
+}}}
+
+== Insert command output ==
+{{{
+:r! [COMMAND]
+}}}
 
 = Useful plugins =
 
