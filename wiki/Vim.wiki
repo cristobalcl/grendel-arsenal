@@ -109,7 +109,7 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 
 == Sort ==
 {{{
-:%!sort
+:sort
 }}}
 
 = Useful plugins =
