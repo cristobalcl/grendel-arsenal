@@ -99,6 +99,12 @@ I// <ESC>
 :r![COMMAND]
 }}}
 
+Or
+
+{{{
+:.![COMMAND]
+}}}
+
 == Execute command on the editing file ==
 Use `%` as the filename. For example, to count how many words are in the file you are editing:
 {{{
