@@ -45,6 +45,11 @@ From normal mode:
 :e file.txt
 }}}
 
+== Insert content of a file ==
+{{{
+:r [FILENAME]
+}}}
+
 = Characters =
 
 == Insert character by its number value ==
@@ -98,6 +103,13 @@ I// <ESC>
 Use `%` as the filename. For example, to count how many words are in the file you are editing:
 {{{
 :!wc %
+}}}
+
+= Tips =
+
+== Sort ==
+{{{
+:%!sort
 }}}
 
 = Useful plugins =
