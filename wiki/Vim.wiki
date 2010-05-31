@@ -118,6 +118,11 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 :sort
 }}}
 
+== Count words in LaTeX ==
+{{{
+:!texcount -1 %
+}}}
+
 = Useful plugins =
 
 == C++ completion ==
