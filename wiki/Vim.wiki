@@ -27,6 +27,12 @@ There are many ways to switch to insert mode:
   * Insert an empty line below the line the cursor is, and insert at it: pressing `o`.
   * Insert an empty line over the line the cursor is, and insert at it: pressing `O` (capital `o`).
 
+== Visual ==
+Visual modes:
+  * Visual: `v`
+  * Lines: `V`
+  * Block: `Ctrl+v`
+
 = Files =
 
 == Open a file ==
