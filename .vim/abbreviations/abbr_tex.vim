@@ -27,6 +27,8 @@ iabbr xfg \begin{figure}<CR>\centering<CR>\caption{!cursor!}<CR>\label{fig:XXX}<
 iabbr imag \includegraphics[scale=0.5]{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr rf \ref{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
+iabbr sfg \subfloat[!cursor!]<CR>{<CR>\label{fig:XXX}<CR>}<ESC>:call search('!cursor!','b')<CR>cf!
+
 iabbr ddef \newtheorem{Definition}{Definición}
 iabbr def \begin{Definition}<CR>!cursor!<CR>\end{Definition}<ESC>:call search('!cursor!','b')<CR>cf!
 
