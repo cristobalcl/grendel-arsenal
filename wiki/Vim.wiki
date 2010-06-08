@@ -127,7 +127,3 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 
 == C++ completion ==
   * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
-
-== Terminal/Shell buffer ==
-  * [http://www.vim.org/scripts/script.php?script_id=165 vimsh]
-  * [http://home.comcast.net/~bsturk/vim.html Vim (Vi Improved)]
