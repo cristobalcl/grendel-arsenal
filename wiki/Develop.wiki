@@ -24,3 +24,10 @@ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 
 
 References:
   * [http://cs.ecs.baylor.edu/~donahoo/tools/valgrind/ Basic Valgrind Tutorial]
+
+= Misc =
+
+== Install build dependencies in Debian ==
+{{{
+sudo aptitude build-dep [PACKAGE]
+}}}
