@@ -6,3 +6,13 @@
 {{{
 ffmpeg -i video_input.mp4 frame_%04d.png
 }}}
+
+= Compile =
+
+{{{
+svn checkout svn://svn.ffmpeg.org/ffmpeg/trunk ffmpeg.svn
+sudo aptitude build-dep ffmpeg
+cd ffmpeg.svn
+./configure
+make
+}}}
