@@ -44,3 +44,16 @@ rename 's/[expr1]/[expr2]/[g]' [files]
 {{{
 fuser -muv [file]
 }}}
+
+= Multimedia =
+
+== Play MIDI ==
+Install `timidity`:
+{{{
+sudo aptitude install timidity
+}}}
+
+Play MIDI file:
+{{{
+timidity [file.mid]
+}}}
