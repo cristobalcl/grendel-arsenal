@@ -17,3 +17,6 @@
   \end{quote}
 }
 }}}
+
+= References =
+  * [http://docs.online.bg/PROGRAMMING/tex/the-texbook.ps The TexBook]
