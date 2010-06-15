@@ -1,0 +1,19 @@
+#summary LaTeX tips and tricks.
+
+= New styles =
+
+== Abstract like style ==
+
+{{{
+\newenvironment{Resumen}
+{
+  \begin{center}\textbf{Resumen}\end{center}
+  \begin{quote}
+  \emph
+  \bgroup
+}
+{
+  \egroup
+  \end{quote}
+}
+}}}
