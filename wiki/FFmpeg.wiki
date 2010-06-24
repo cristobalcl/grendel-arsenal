@@ -7,8 +7,12 @@
 ffmpeg -i video_input.mp4 frame_%04d.png
 }}}
 
-= Compile =
+== Extract audio from video ==
+{{{
+ffmpeg -i video_input.mp4 -ab 128 -ar 44100 audio_output.mp3
+}}}
 
+= Compile =
 {{{
 sudo aptitude build-dep ffmpeg
 svn checkout svn://svn.ffmpeg.org/ffmpeg/trunk ffmpeg.svn
