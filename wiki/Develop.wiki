@@ -13,7 +13,7 @@ svn copy https://grendel-arsenal.googlecode.com/svn/trunk/ https://grendel-arsen
 
 === Checkout ===
 {{{
-git clone URL
+git clone [URL]
 }}}
 
 === Update ===
