@@ -1,5 +1,15 @@
 #summary LaTeX tips and tricks.
 
+= Formatting =
+
+== Quote paragraphs ==
+{{{
+\begin{quotation}
+\emph{Reality is whatever refuses to go away when I stop believing in it.}\\
+\textbf{Philip K. Dick}
+\end{quotation}
+}}}
+
 = Maths =
 
 == Delimeters ==
