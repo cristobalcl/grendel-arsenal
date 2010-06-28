@@ -9,6 +9,21 @@
 svn copy https://grendel-arsenal.googlecode.com/svn/trunk/ https://grendel-arsenal.googlecode.com/svn/tags/0.1.0 -m "Version 0.1.0 tag."
 }}}
 
+== Git ==
+
+=== Checkout ===
+{{{
+git clone URL
+}}}
+
+=== Update ===
+{{{
+git pull
+}}}
+
+=== References ===
+  * [http://git.or.cz/course/svn.html Git - SVN Crash Course]
+
 = Debug =
 
 == Valgrind ==
