@@ -42,6 +42,26 @@ rename 's/[expr1]/[expr2]/[g]' [files]
 fuser -muv [file]
 }}}
 
+= Scripting =
+
+== Loops ==
+For loop syntax:
+{{{
+#!/bin/bash
+for i in {1..5}
+do
+   echo "Welcome $i times"
+done
+}}}
+
+In one line:
+{{{
+for i in {1..5}; do echo "Welcome $i times"; done
+}}}
+
+References:
+  * [http://www.cyberciti.biz/faq/bash-for-loop/ Bash For Loop Examples]
+
 = Multimedia =
 
 == Play MIDI ==
