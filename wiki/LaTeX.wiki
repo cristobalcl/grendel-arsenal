@@ -20,3 +20,4 @@
 
 = References =
   * [http://docs.online.bg/PROGRAMMING/tex/the-texbook.ps The TexBook]
+  * [http://en.wikipedia.org/wiki/Math_markup Math Markup]
