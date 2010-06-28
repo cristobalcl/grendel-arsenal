@@ -2,6 +2,8 @@ iabbr ital \emph{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr itl \emph{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr bld \textbf{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
+iabbr quotep \begin{quotation}<CR>\emph<CR>!cursor!<CR>\end{quotation}<ESC>:call search('!cursor!','b')<CR>cf!
+
 iabbr lst \begin{itemize}<CR>\item!cursor!<CR>\end{itemize}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr enu \begin{enumerate}<CR>\item!cursor!<CR>\end{enumerate}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr des \begin{description}<CR>\item[!cursor!]<CR>\end{description}<ESC>:call search('!cursor!','b')<CR>cf!
@@ -33,4 +35,11 @@ iabbr srf \ref{XXX}\subref{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr ddef \newtheorem{Definition}{Definición}
 iabbr def \begin{Definition}<CR>!cursor!<CR>\end{Definition}<ESC>:call search('!cursor!','b')<CR>cf!
 
+iabbr ftnt \footnote{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
+
 iabbr cit \cite{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
+
+iabbr () \left (!cursor! \right )<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr [] \left [!cursor! \right ]<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr {} \left \{!cursor! \right \}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr vctr \mathbf{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
