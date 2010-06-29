@@ -1,6 +1,26 @@
 #summary LaTeX tips and tricks.
 #labels Featured
 
+= Comments =
+One line:
+{{{
+# One comment.
+}}}
+
+Multiline:
+{{{
+\usepackage{verbatim}
+}}}
+
+in the preamble. Then:
+{{{
+\begin{comment}
+Multi
+line
+comment.
+\end{comment}
+}}}
+
 = Formatting =
 
 == Quote paragraphs ==
