@@ -18,6 +18,13 @@
 || Brackets || `[ ]` || `\left [ \right ]` ||
 || Braces || `{ }` || `\left \{ \right \}` ||
 
+== Subscripts, superscripts,... ==
+|| Subscript || || `A_n`, `A_{n}`||
+|| Superscript || || `A^n` ||
+|| Hat, wide hat || Â || `\hat A`, `\widehat A` ||
+|| Bar, overline || || `\bar A`, `\overline A` ||
+|| Vector || || `\vec A`, `\overrightarrow{A B}` ||
+
 = New styles =
 
 == Abstract like style ==
