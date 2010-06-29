@@ -3,6 +3,7 @@ iabbr itl \emph{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr bld \textbf{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
 iabbr quotep \begin{quotation}<CR>\emph<CR>!cursor!<CR>\end{quotation}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr equp \begin{equation}<CR>!cursor!<CR>\end{equation}<ESC>:call search('!cursor!','b')<CR>cf!
 
 iabbr lst \begin{itemize}<CR>\item!cursor!<CR>\end{itemize}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr enu \begin{enumerate}<CR>\item!cursor!<CR>\end{enumerate}<ESC>:call search('!cursor!','b')<CR>cf!
