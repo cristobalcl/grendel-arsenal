@@ -18,6 +18,9 @@ set autoindent shiftwidth=2
 set hlsearch   " Iluminar búsquedas (buscar con *)
 set incsearch  " Búsqueda incremental
 
+map <SPACE> i<SPACE><ESC>
+map <CR> o<ESC>
+
 map <A-DOWN> gj
 map <A-UP> gk
 imap <A-DOWN> <ESC>lgji
