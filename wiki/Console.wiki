@@ -42,6 +42,11 @@ rename 's/[expr1]/[expr2]/[g]' [files]
 fuser -muv [file]
 }}}
 
+== List directories and sort by size ==
+{{{
+du . | sort -n
+}}}
+
 = Scripting =
 
 == Loops ==
