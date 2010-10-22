@@ -45,6 +45,19 @@ comment.
 || Bar, overline || || `\bar A`, `\overline A` ||
 || Vector || || `\vec A`, `\overrightarrow{A B}` ||
 
+= Links =
+
+In the preamble:
+
+{{{
+\usepackage{hyperref}
+}}}
+
+Then:
+{{{
+\href{http://cvblob.googlecode.com}{cvblob.googlecode.com}
+}}}
+
 = New styles =
 
 == Abstract like style ==
