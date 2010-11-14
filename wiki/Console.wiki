@@ -47,6 +47,13 @@ fuser -muv [file]
 du . | sort -n
 }}}
 
+= System =
+
+== Ubuntu version ==
+{{{
+lsb_release -a
+}}}
+
 = Scripting =
 
 == Loops ==
