@@ -47,6 +47,11 @@ fuser -muv [file]
 du . | sort -n
 }}}
 
+== List files, one file per row ==
+{{{
+ls -1
+}}}
+
 = System =
 
 == Ubuntu version ==
