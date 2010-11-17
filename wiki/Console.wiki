@@ -1,4 +1,4 @@
-#summary Work with Yakuake/Konsole/Bash/Kubuntu/GNU/Linux.
+#summary Work with Bash/Konsole/Yakuake/Kubuntu/GNU/Linux.
 #labels Featured
 
 = Introduction =
