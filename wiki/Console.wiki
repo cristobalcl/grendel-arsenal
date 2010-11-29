@@ -53,11 +53,9 @@ ls -1
 }}}
 
 = System =
-
-== Ubuntu version ==
-{{{
-lsb_release -a
-}}}
+|| Linux version || lsb_release -a ||
+|| CPU || cat /proc/cpuinfo ||
+|| Memory || cat /proc/meminfo ||
 
 = Scripting =
 
