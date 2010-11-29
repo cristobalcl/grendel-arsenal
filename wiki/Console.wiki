@@ -1,6 +1,8 @@
 #summary Work with Bash/Konsole/Yakuake/Kubuntu/GNU/Linux.
 #labels Featured
 
+<wiki:toc />
+
 = Introduction =
 
 Daily working with the Linux console, i.e. [http://en.wikipedia.org/wiki/Bash Bash] shell in an [http://en.wikipedia.org/wiki/GNU GNU]/[http://en.wikipedia.org/wiki/Linux Linux] operating system. And perhaps inside the [http://en.wikipedia.org/wiki/Konsole Konsole] terminal or [http://en.wikipedia.org/wiki/Yakuake Yakuake].
@@ -14,48 +16,24 @@ sudo aptitude install yakuake
 }}}
 
 == Usage ==
-Execute Yakuake (only first time):
-  * `Alt+F2`, write "yakuake" and `INTRO`.
 
-Open Yakuake:
-  * `F12`
-
-Create new tabs:
-  * `CTRL+n`
-
-Close tab (bash logout):
-  * `CTRL+d`
-
-Navigate throw tabs:
-  * `SHIFT`+`Left` or `SHIFT`+`Right`
+|| Execute Yakuake (only first time) || `Alt+F2`, write "yakuake" and `INTRO`. ||
+|| Open Yakuake || `F12` ||
+|| Create new tabs || `CTRL+n` ||
+|| Close tab (bash logout) || `CTRL+d` ||
+|| Navigate throw tabs || `SHIFT`+`Left` or `SHIFT`+`Right` ||
 
 = Working with files and directories =
 
-== Rename ==
-In Ubuntu:
-{{{
-rename 's/[expr1]/[expr2]/[g]' [files]
-}}}
-
-== Who is using a file ==
-{{{
-fuser -muv [file]
-}}}
-
-== List directories and sort by size ==
-{{{
-du . | sort -n
-}}}
-
-== List files, one file per row ==
-{{{
-ls -1
-}}}
+|| Rename (in Ubuntu) || `rename 's/[expr1]/[expr2]/[g]' [files]` ||
+|| Who is using a file || `fuser -muv [file]` ||
+|| List directories and sort by size || `du . | sort -n` ||
+|| List files, one file per row || `ls -1` ||
 
 = System =
-|| Linux version || lsb_release -a ||
-|| CPU || cat /proc/cpuinfo ||
-|| Memory || cat /proc/meminfo ||
+|| Linux version || `lsb_release -a` ||
+|| CPU || `cat /proc/cpuinfo` ||
+|| Memory || `cat /proc/meminfo` ||
 
 = Scripting =
 
@@ -65,7 +43,7 @@ For loop syntax:
 #!/bin/bash
 for i in {1..5}
 do
-   echo "Welcome $i times"
+   echo "Hello $i world!"
 done
 }}}
 
