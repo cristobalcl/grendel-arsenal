@@ -1,0 +1,53 @@
+#summary Math with Free Software.
+
+= PyLab =
+
+== Plotting CSV ==
+Run PyLab:
+
+{{{
+$ ipython -pylab
+}}}
+
+Open CSV:
+
+{{{
+data = csv2rec("hand_results.txt", delimiter=" ")
+}}}
+
+Print some data:
+
+{{{
+print data
+print data["name"]
+print data[1]
+}}}
+
+Create figure:
+
+{{{
+figure()
+}}}
+
+Plot a column:
+
+{{{
+plot(range(len(data)), data["column1"], "r.")
+}}}
+
+Add details:
+
+{{{
+xticks(range(len(data)), data["name"],)
+grid(".")
+ylabel("Y")
+xlabel("X")
+title("Hello world!")
+legend(('Column 1',), loc='best')
+}}}
+
+Save figure:
+
+{{{
+savefig('figure.pdf')
+}}}
