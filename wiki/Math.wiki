@@ -3,7 +3,7 @@
 = !PyLab =
 
 == Plotting CSV ==
-Run PyLab:
+Run !PyLab:
 
 {{{
 $ ipython -pylab
