@@ -1,6 +1,6 @@
 #summary Math with Free Software.
 
-= PyLab =
+= !PyLab =
 
 == Plotting CSV ==
 Run PyLab:
