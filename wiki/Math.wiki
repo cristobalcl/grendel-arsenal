@@ -48,12 +48,6 @@ title("Hello world!")
 legend(("Column 1",), loc='best')
 }}}
 
-Save figure:
-
-{{{
-savefig("figure.pdf")
-}}}
-
 === Script mode ===
 
 *plot.py*:
