@@ -3,6 +3,8 @@
 = !PyLab =
 
 == Plotting CSV ==
+
+=== In interactive mode ==
 Run !PyLab:
 
 {{{
@@ -43,11 +45,42 @@ grid(".")
 ylabel("Y")
 xlabel("X")
 title("Hello world!")
-legend(('Column 1',), loc='best')
+legend(("Column 1",), loc='best')
 }}}
 
 Save figure:
 
 {{{
-savefig('figure.pdf')
+savefig("figure.pdf")
+}}}
+
+=== Script mode ===
+
+*plot.py*:
+
+{{{
+from pylab import *
+
+data = csv2rec("results.csv", delimiter=" ")
+
+figure()
+
+plot(range(len(data)), data["Column1"], "r")
+plot(range(len(data)), data["Column2"], "g")
+plot(range(len(data)), data["Column3"], "b")
+
+xticks(range(len(data)), data["name"], rotation=45)
+grid(".")
+ylabel("Y")
+xlabel("X")
+title("Results")
+legend(("Column1", "Column2", "Column3"), loc='best')
+
+savefig("figure.pdf")
+}}}
+
+Run script:
+
+{{{
+$ python plot.py
 }}}
