@@ -12,7 +12,7 @@ $ ipython -pylab
 Open CSV:
 
 {{{
-data = csv2rec("hand_results.txt", delimiter=" ")
+data = csv2rec("results.csv", delimiter=" ")
 }}}
 
 Print some data:
