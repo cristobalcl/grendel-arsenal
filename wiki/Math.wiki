@@ -84,4 +84,4 @@ $ python plot.py
   * [http://matplotlib.sourceforge.net/ matplotlib]
   * [http://www.rexx.com/~dkuhlman/scipy_course_01.html SciPy Course]
   * [http://mathesaurus.sourceforge.net/ Mathesaurus]
-  * [http://spyderlib.googlecode.com Spyder] (Scientific PYthon Development EnviRonment)
+  * [http://spyderlib.googlecode.com Spyder] (Scientific PYthon Development !EnviRonment)
