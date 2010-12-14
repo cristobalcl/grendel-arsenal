@@ -80,3 +80,4 @@ Then:
   * [http://docs.online.bg/PROGRAMMING/tex/the-texbook.ps The TexBook]
   * [http://en.wikipedia.org/wiki/Math_markup Math Markup]
   * [http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols LaTeX:Symbols]
+  * [http://en.wikibooks.org/wiki/LaTeX/Tables Tables]
