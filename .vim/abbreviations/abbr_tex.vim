@@ -19,6 +19,7 @@ iabbr it3 \item<3->
 iabbr it4 \item<4->
 iabbr it5 \item<5->
 
+iabbr cap \chapter{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr sect \section{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr ssect \subsection{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
