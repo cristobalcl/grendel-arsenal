@@ -44,3 +44,5 @@ iabbr () \left (!cursor! \right )<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr [] \left [!cursor! \right ]<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr {} \left \{!cursor! \right \}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr vctr \mathbf{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
+
+iabbr ... \ldots
