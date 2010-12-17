@@ -63,7 +63,7 @@ From normal mode:
 <C-V>, [Number in decimal, octal or hexadecimal]
 }}}
 
-[http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-V_digit Reference]
+  * [http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-V_digit Reference]
 
 = Repetitions =
 
@@ -134,6 +134,8 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 :set formatoptions=tcqw
 gggqG
 }}}
+
+  * [http://stackoverflow.com/questions/938105/readme-80-character-limit-or-just-let-the-users-editor-handle-it Reference]
 
 = Useful plugins =
 
