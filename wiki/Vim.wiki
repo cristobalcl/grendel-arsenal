@@ -129,6 +129,12 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 :!texcount -1 %
 }}}
 
+== Edit README files (80 columns) ==
+{{{
+:set formatoptions=tcqw
+gggqG
+}}}
+
 = Useful plugins =
 
 == C++ completion ==
