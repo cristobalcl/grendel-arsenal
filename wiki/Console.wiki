@@ -30,6 +30,18 @@ sudo aptitude install yakuake
 || List directories and sort by size || `du . | sort -n` ||
 || List files, one file per row || `ls -1` ||
 
+= Searching =
+
+== Content in files ==
+
+|| Find _EXP_ in this directory || `grep EXP *` ||
+|| Find _EXP_ recursively from _PATH_ || `grep EXP PATH -R` ||
+|| Find lines without _EXP_ || `grep EXP . -v` ||
+
+== Files ==
+
+|| Find file _FILENAME_ recursively from _PATH_ || `find PATH -iname FILENAME` ||
+
 = System =
 || Linux version || `lsb_release -a` ||
 || CPU || `cat /proc/cpuinfo` ||
