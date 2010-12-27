@@ -34,6 +34,7 @@ map <F8> :cn<CR>
 set spelllang=es,en_us
 set spellsuggest=10
 map <C-F5> :setlocal spell<CR>
+map <M-F5> z=
 imap <M-F5> <ESC>z=
 
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
