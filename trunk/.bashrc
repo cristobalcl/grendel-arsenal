@@ -17,3 +17,5 @@ alias -- -='popd'
 alias epwd='ls "`pwd`" -db'
 
 ? () { echo "$*" | bc -l; }
+
+alias pylab='ipython -pylab'
