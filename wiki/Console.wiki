@@ -79,3 +79,18 @@ Play MIDI file:
 {{{
 timidity [file.mid]
 }}}
+
+= Building and installing =
+
+== Make ==
+
+=== Install ===
+{{{
+make install
+}}}
+
+To a path:
+
+{{{
+make install DESTDIR="/absolute/path/"
+}}}
