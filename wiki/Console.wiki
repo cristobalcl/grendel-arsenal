@@ -67,6 +67,13 @@ for i in {1..5}; do echo "Welcome $i times"; done
 References:
   * [http://www.cyberciti.biz/faq/bash-for-loop/ Bash For Loop Examples]
 
+= Internet =
+
+== Type a web ==
+{{{
+wget -qO- [URL]
+}}}
+
 = Multimedia =
 
 == Play MIDI ==
