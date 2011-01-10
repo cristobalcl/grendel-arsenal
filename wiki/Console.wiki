@@ -91,6 +91,11 @@ timidity [file.mid]
 
 == Make ==
 
+=== Verbose output ===
+{{{
+make VERBOSE=1
+}}}
+
 === Install ===
 {{{
 make install
