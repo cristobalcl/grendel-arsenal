@@ -25,10 +25,19 @@ sudo aptitude install yakuake
 
 = Working with files and directories =
 
-|| Rename (in Ubuntu) || `rename 's/[expr1]/[expr2]/[g]' [files]` ||
+== Info about a file ==
+
+|| Number of lines, words and characters || `wc [file]` ||
 || Who is using a file || `fuser -muv [file]` ||
+
+== Listing files ==
+
 || List directories and sort by size || `du . | sort -n` ||
 || List files, one file per row || `ls -1` ||
+
+== Manipulate files ==
+
+|| Rename (in Ubuntu) || `rename 's/[expr1]/[expr2]/[g]' [files]` ||
 
 = Searching =
 
