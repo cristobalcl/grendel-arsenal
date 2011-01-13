@@ -29,6 +29,7 @@ iabbr fg \begin{figure}<CR>!cursor!<CR>\end{figure}<ESC>:call search('!cursor!',
 iabbr cntr \begin{center}<CR>!cursor!<CR>\end{center}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr xfg \begin{figure}<CR>\centering<CR>\caption{!cursor!}<CR>\label{fig:XXX}<CR>\end{figure}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr imag \includegraphics[scale=0.5]{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
+iabbr lbl \label{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 iabbr rf \ref{!cursor!}<ESC>:call search('!cursor!','b')<CR>cf!
 
 iabbr sfg \subfloat[!cursor!]<CR>{<CR>\label{fig:XXX}<CR>}<ESC>:call search('!cursor!','b')<CR>cf!
