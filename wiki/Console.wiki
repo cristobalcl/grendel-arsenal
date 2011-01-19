@@ -55,6 +55,7 @@ sudo aptitude install yakuake
 || Linux version || `lsb_release -a` ||
 || CPU || `cat /proc/cpuinfo` ||
 || Memory || `cat /proc/meminfo` ||
+|| 32 or 64 bits || `uname -m` or `file /usr/bin/file` ||
 
 = Scripting =
 
