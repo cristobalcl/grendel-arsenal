@@ -32,7 +32,8 @@ sudo aptitude install yakuake
 
 == Listing files ==
 
-|| List directories and sort by size || `du . | sort -n` ||
+|| List directories and their size || `du * -sh` ||
+|| List directories and sort by size || `du * -s | sort -n` ||
 || List files, one file per row || `ls -1` ||
 
 == Manipulate files ==
