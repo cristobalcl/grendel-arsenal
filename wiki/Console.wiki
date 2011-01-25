@@ -117,3 +117,8 @@ To a path:
 {{{
 make install DESTDIR="/absolute/path/"
 }}}
+
+== Install .deb ==
+{{{
+sudo dpkg -i program.deb
+}}}
