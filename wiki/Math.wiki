@@ -111,3 +111,13 @@ In Ubuntu:
 {{{
 sudo aptitude install python-scipy
 }}}
+
+= !PyBrain =
+
+== Install ==
+{{{
+sudo aptitude install git-core python-setuptools
+git clone git://github.com/pybrain/pybrain.git
+cd pybrain
+sudo python setup.py install
+}}}
