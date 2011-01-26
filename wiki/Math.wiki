@@ -1,5 +1,7 @@
 #summary Math with Free Software.
 
+<wiki:toc />
+
 = !PyLab =
 
 == Install ==
