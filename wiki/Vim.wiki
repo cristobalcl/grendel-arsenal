@@ -56,6 +56,16 @@ From normal mode:
 :r [FILENAME]
 }}}
 
+== Convert Unix file to Windows ==
+{{{
+:set ff=dos
+}}}
+
+== Convert Windows file to Unix ==
+{{{
+:set ff=unix
+}}}
+
 = Characters =
 
 == Insert character by its number value ==
