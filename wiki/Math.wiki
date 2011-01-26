@@ -2,6 +2,13 @@
 
 = !PyLab =
 
+== Install ==
+In Ubuntu:
+
+{{{
+sudo aptitude install python-matplotlib
+}}}
+
 == Sorting ==
 
 {{{
@@ -95,3 +102,12 @@ $ python plot.py
   * [http://mathesaurus.sourceforge.net/ Mathesaurus]
   * [http://www.scipy.org/NumPy_for_Matlab_Users NumPy for Matlab Users]
   * [http://spyderlib.googlecode.com Spyder] (Scientific PYthon Development !EnviRonment)
+
+= Scipy =
+
+== Install ==
+In Ubuntu:
+
+{{{
+sudo aptitude install python-scipy
+}}}
