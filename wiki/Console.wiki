@@ -40,6 +40,11 @@ sudo aptitude install yakuake
 
 || Rename (in Ubuntu) || `rename 's/[expr1]/[expr2]/[g]' [files]` ||
 
+== Patches ==
+
+|| Apply || `patch -p1 < file.patch` ||
+|| Undone || `patch -R < file.patch` ||
+
 = Searching =
 
 == Content in files ==
