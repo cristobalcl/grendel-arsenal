@@ -11,8 +11,8 @@ quiet = False
 
 def processCommandLine():
   parser = optparse.OptionParser(usage="%prog [options] arg", version="%prog "+version)
-  parser.add_option("-v", "--verbose", action="store_true", dest="verbose")
-  parser.add_option("-q", "--quiet", action="store_false", dest="quiet")
+  parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=verbose)
+  parser.add_option("-q", "--quiet", action="store_false", dest="quiet", default=quiet)
 
   (options, args) = parser.parse_args()
 
