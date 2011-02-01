@@ -147,6 +147,23 @@ gggqG
 
   * [http://stackoverflow.com/questions/938105/readme-80-character-limit-or-just-let-the-users-editor-handle-it Reference]
 
+== Convert spanish characters to HTML ==
+
+{{{
+:%s/á/\&aacute;/g
+:%s/é/\&eacute;/g
+:%s/í/\&iacute;/g
+:%s/ó/\&oacute;/g
+:%s/ú/\&uacute;/g
+:%s/Á/\&Aacute;/g
+:%s/É/\&Eacute;/g
+:%s/Í/\&Iacute;/g
+:%s/Ó/\&Oacute;/g
+:%s/Ú/\&Uacute;/g
+:%s/ñ/\&ntilde;/g
+:%s/Ñ/\&Ntilde;/g
+}}}
+
 = Useful plugins =
 
 == C++ completion ==
