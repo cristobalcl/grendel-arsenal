@@ -26,6 +26,15 @@ map <A-UP> gk
 imap <A-DOWN> <ESC>lgji
 imap <A-UP> <ESC>lgki
 
+" Repite la última acción y posiciona el cursor al comienzo de la zona
+" modificada.
+map . .`[
+
+"set pastetoggle=<F2>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 map <F5> :make<CR>
 map <F6> :copen<CR>
 map <F7> :cp<CR>
