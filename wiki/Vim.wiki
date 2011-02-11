@@ -32,6 +32,7 @@ Visual modes:
   * Visual: `v`
   * Lines: `V`
   * Block: `Ctrl+v`
+  * Repeat last selection: `gv`
 
 = Files =
 
