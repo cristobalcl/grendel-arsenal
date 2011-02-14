@@ -9,6 +9,7 @@ shopt -s cdspell
 
 alias l='ls -hlA'
 alias lo='ls -hlAtr'
+alias ll='ls -hlASr'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias -- ,='cd -'
