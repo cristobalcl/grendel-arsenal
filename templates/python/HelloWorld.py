@@ -14,14 +14,17 @@ def processCommandLine():
 
   (options, args) = parser.parse_args()
 
-  if len(args) != 1:
-    parser.error("incorrect number of arguments")
+  #if len(args) != 1:
+  #  parser.error("incorrect number of arguments")
 
   return (options, args)
 
   
 def main():
   (options, args) = processCommandLine()
+
+  # XXX
+
   return 0
   
 
