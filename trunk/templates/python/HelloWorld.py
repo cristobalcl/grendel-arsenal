@@ -23,7 +23,7 @@ def processCommandLine():
 def main():
   (options, args) = processCommandLine()
 
-  # XXX
+  # TODO
 
   return 0
   
