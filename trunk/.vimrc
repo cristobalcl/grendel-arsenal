@@ -12,6 +12,8 @@ filetype plugin on
 
 let b:tex_flavor = 'pdflatex'
 
+"set smartindent
+set tabstop=2
 set autoindent shiftwidth=2
 "set expandtab
 
