@@ -127,3 +127,40 @@ make install DESTDIR="/absolute/path/"
 {{{
 sudo dpkg -i program.deb
 }}}
+
+= Advanced =
+
+== Debian Bootstrap ==
+Installing `debootstrap`:
+{{{
+sudo aptitude install debootstrap
+}}}
+
+Creating bootstrap:
+{{{
+dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
+sudo mkfs.ext4 debian_stable.raw
+sudo mount -t auto -o loop debian_stable.raw /mnt/
+sudo debootstrap stable /mnt http://ftp.fr.debian.org/debian
+}}}
+
+Mounting bootstrap:
+{{{
+chroot /mnt/
+}}}
+
+Setting up installation:
+{{{
+echo "deb http://ftp.fr.debian.org/debian stable main contrib non-free" > /etc/apt/sources.list
+apt-get update && apt-get dist-upgrade
+#mount -t proc /proc proc
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+echo "proc            /proc           proc    nodev,noexec,nosuid 0       0" >> /etc/fstab
+mount -a
+}}}
+
+Exit:
+{{{
+umount -a
+exit
+}}}
