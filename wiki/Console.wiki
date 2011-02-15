@@ -147,7 +147,8 @@ sudo debootstrap stable /mnt http://ftp.fr.debian.org/debian
 
 Mounting bootstrap:
 {{{
-chroot debootstrap
+#sudo mount -t auto -o loop debian_stable.raw debootstrap
+sudo chroot debootstrap
 }}}
 
 Setting up installation:
@@ -165,4 +166,5 @@ Exit:
 umount -a
 #umount /proc
 exit
+sudo umount debootstrap
 }}}
