@@ -140,13 +140,14 @@ Creating bootstrap:
 {{{
 dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
 sudo mkfs.ext4 debian_stable.raw
-sudo mount -t auto -o loop debian_stable.raw /mnt/
+sudo mkdir debootstrap
+sudo mount -t auto -o loop debian_stable.raw debootstrap
 sudo debootstrap stable /mnt http://ftp.fr.debian.org/debian
 }}}
 
 Mounting bootstrap:
 {{{
-chroot /mnt/
+chroot debootstrap
 }}}
 
 Setting up installation:
