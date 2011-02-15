@@ -163,5 +163,6 @@ mount -a
 Exit:
 {{{
 umount -a
+#umount /proc
 exit
 }}}
