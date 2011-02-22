@@ -52,6 +52,8 @@ sudo aptitude install yakuake
 || Find _EXP_ in this directory || `grep EXP *` ||
 || Find _EXP_ recursively from _PATH_ || `grep EXP PATH -R` ||
 || Find lines without _EXP_ || `grep EXP . -v` ||
+|| Replace _EXP1_ for _EXP2_ in file _FILE_ || `sed 's/EXP1/EXP2/g' _FILE_ > _FILE_` ||
+|| Multiple replaces || `sed 's/EXP11/EXP21/g;...;s/EXP1n/EXP2n/g' _FILE_ > _FILE_` ||
 
 == Files ==
 
