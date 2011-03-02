@@ -20,7 +20,6 @@ set autoindent shiftwidth=2
 set hlsearch   " Iluminar búsquedas (buscar con *)
 set incsearch  " Búsqueda incremental
 
-map <SPACE> i<SPACE><ESC>
 map <CR> o<ESC>
 
 map <A-DOWN> gj
@@ -31,6 +30,14 @@ imap <A-UP> <ESC>lgki
 " Repite la última acción y posiciona el cursor al comienzo de la zona
 " modificada.
 map . .`[
+
+" Move lines up and down
+nnoremap <C-Down> :m+<CR>==
+nnoremap <C-Up> :m-2<CR>==
+inoremap <C-Down> <Esc>:m+<CR>==gi
+inoremap <C-Up> <Esc>:m-2<CR>==gi
+vnoremap <C-Down> :m'>+<CR>gv=gv
+vnoremap <C-Up> :m-2<CR>gv=gv
 
 "set pastetoggle=<F2>
 nnoremap <F2> :set invpaste paste?<CR>
