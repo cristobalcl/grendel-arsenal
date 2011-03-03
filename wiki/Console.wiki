@@ -82,6 +82,11 @@ In one line:
 for i in {1..5}; do echo "Welcome $i times"; done
 }}}
 
+For over find:
+{{{
+for f in `find -iname "[FILENAME]"`; do cat $f; done
+}}}
+
 References:
   * [http://www.cyberciti.biz/faq/bash-for-loop/ Bash For Loop Examples]
 
