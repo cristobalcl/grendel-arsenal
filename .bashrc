@@ -22,3 +22,6 @@ alias epwd='ls "`pwd`" -db'
 alias today='date +%F'
 alias pylab='ipython -pylab'
 alias wcat='wget -qO-'
+
+alias here='pwd | xsel --clipboard'
+alias there='cd `xsel --clipboard`'
