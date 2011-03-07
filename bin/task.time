@@ -1,0 +1,16 @@
+#!/bin/bash
+
+TASKFILE=~/.task
+
+if [ ! -f $TASKFILE ]
+then
+  echo "error: no task in progress!"
+  exit
+fi
+
+START=`cat $TASKFILE`
+NOW=$(date +%s)
+
+DIFF=$((NOW-START))
+
+echo $((DIFF/3600))
