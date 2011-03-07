@@ -147,8 +147,8 @@ Creating bootstrap:
 {{{
 dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
 sudo mkfs.ext4 debian_stable.raw
-sudo mkdir debootstrap
-sudo mount -t auto -o loop debian_stable.raw debootstrap
+sudo mkdir bootstrap
+sudo mount -t auto -o loop debian_stable.raw bootstrap
 sudo debootstrap lenny bootstrap http://ftp.fr.debian.org/debian
 }}}
 
