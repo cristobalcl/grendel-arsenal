@@ -149,13 +149,13 @@ dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
 sudo mkfs.ext4 debian_stable.raw
 sudo mkdir debootstrap
 sudo mount -t auto -o loop debian_stable.raw debootstrap
-sudo debootstrap lenny debootstrap http://ftp.fr.debian.org/debian
+sudo debootstrap lenny bootstrap http://ftp.fr.debian.org/debian
 }}}
 
 Mounting bootstrap:
 {{{
 #sudo mount -t auto -o loop debian_stable.raw debootstrap
-sudo chroot debootstrap
+sudo chroot bootstrap
 }}}
 
 Setting up installation:
@@ -173,5 +173,5 @@ Exit:
 #umount -a
 #umount /proc && umount /sys
 exit
-sudo umount debootstrap
+sudo umount bootstrap
 }}}
