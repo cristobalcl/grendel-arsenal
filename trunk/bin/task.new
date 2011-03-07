@@ -1,0 +1,11 @@
+#/bin/bash
+
+TASKFILE=~/.task
+
+if [ -f $TASKFILE ]
+then
+  echo "error: task in progress!"
+  exit
+fi
+
+date +%s > $TASKFILE
