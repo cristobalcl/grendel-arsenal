@@ -168,6 +168,13 @@ apt-get update && apt-get dist-upgrade
 #mount -a
 }}}
 
+X's:
+{{{
+# From host:
+sudo mount --bind /tmp debootstrap/tmp/
+xhost +
+}}}
+
 Exit:
 {{{
 #umount -a
