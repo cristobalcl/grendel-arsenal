@@ -1,1 +1,177 @@
+#summary Work with Bash/Konsole/Yakuake/Kubuntu/GNU/Linux.
 #labels Featured
+
+<wiki:toc />
+
+= Introduction =
+
+Daily working with the Linux console, i.e. [http://en.wikipedia.org/wiki/Bash Bash] shell in an [http://en.wikipedia.org/wiki/GNU GNU]/[http://en.wikipedia.org/wiki/Linux Linux] operating system. And perhaps inside the [http://en.wikipedia.org/wiki/Konsole Konsole] terminal or [http://en.wikipedia.org/wiki/Yakuake Yakuake].
+
+= Yakuake =
+
+== Installation ==
+Yakuake:
+{{{
+sudo aptitude install yakuake
+}}}
+
+== Usage ==
+
+|| Execute Yakuake (only first time) || `Alt+F2`, write "yakuake" and `INTRO`. ||
+|| Open Yakuake || `F12` ||
+|| Create new tabs || `CTRL+n` ||
+|| Close tab (bash logout) || `CTRL+d` ||
+|| Navigate throw tabs || `SHIFT`+`Left` or `SHIFT`+`Right` ||
+
+= Working with files and directories =
+
+== Info about a file ==
+
+|| Number of lines, words and characters || `wc [file]` ||
+|| Who is using a file || `fuser -muv [file]` ||
+
+== Listing files ==
+
+|| List files, one file per row || `ls -1` ||
+|| List directories and their size || `du * -sh` ||
+|| List directories and sort by size || `du * -s | sort -n` ||
+
+== Manipulate files ==
+
+|| Rename (in Ubuntu) || `rename 's/[expr1]/[expr2]/[g]' [files]` ||
+
+== Patches ==
+
+|| Apply || `patch -p1 < file.patch` ||
+|| Undone || `patch -R < file.patch` ||
+
+= Searching =
+
+== Content in files ==
+
+|| Find _EXP_ in this directory || `grep EXP *` ||
+|| Find _EXP_ recursively from _PATH_ || `grep EXP PATH -R` ||
+|| Find lines without _EXP_ || `grep EXP . -v` ||
+|| Replace _EXP1_ for _EXP2_ in file _FILE_ || `sed 's/EXP1/EXP2/g' _FILE_ > _FILE_` ||
+|| Multiple replaces || `sed 's/EXP11/EXP21/g;...;s/EXP1n/EXP2n/g' _FILE_ > _FILE_` ||
+
+== Files ==
+
+|| Find file _FILENAME_ recursively from _PATH_ || `find PATH -iname FILENAME` ||
+
+= System =
+|| Linux version || `lsb_release -a` ||
+|| CPU || `cat /proc/cpuinfo` ||
+|| Memory || `cat /proc/meminfo` ||
+|| 32 or 64 bits || `uname -m` or `file /usr/bin/file` ||
+
+= Scripting =
+
+== Loops ==
+For loop syntax:
+{{{
+#!/bin/bash
+for i in {1..5}
+do
+   echo "Hello $i world!"
+done
+}}}
+
+In one line:
+{{{
+for i in {1..5}; do echo "Welcome $i times"; done
+}}}
+
+For over find:
+{{{
+for f in `find -iname "[FILENAME]"`; do cat $f; done
+}}}
+
+References:
+  * [http://www.cyberciti.biz/faq/bash-for-loop/ Bash For Loop Examples]
+
+= Internet =
+
+== Type a web ==
+{{{
+wget -qO- [URL]
+}}}
+
+= Multimedia =
+
+== Play MIDI ==
+Install `timidity`:
+{{{
+sudo aptitude install timidity
+}}}
+
+Play MIDI file:
+{{{
+timidity [file.mid]
+}}}
+
+= Building and installing =
+
+== Make ==
+
+=== Verbose output ===
+{{{
+make VERBOSE=1
+}}}
+
+=== Install ===
+{{{
+make install
+}}}
+
+To a path:
+
+{{{
+make install DESTDIR="/absolute/path/"
+}}}
+
+== Install .deb ==
+{{{
+sudo dpkg -i program.deb
+}}}
+
+= Advanced =
+
+== Debian Bootstrap ==
+Installing `debootstrap`:
+{{{
+sudo aptitude install debootstrap
+}}}
+
+Creating bootstrap:
+{{{
+dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
+sudo mkfs.ext4 debian_stable.raw
+sudo mkdir bootstrap
+sudo mount -t auto -o loop debian_stable.raw bootstrap
+sudo debootstrap lenny bootstrap http://ftp.fr.debian.org/debian
+}}}
+
+Mounting bootstrap:
+{{{
+#sudo mount -t auto -o loop debian_stable.raw debootstrap
+sudo chroot bootstrap
+}}}
+
+Setting up installation:
+{{{
+#echo "deb http://ftp.fr.debian.org/debian lenny main contrib non-free" >> /etc/apt/sources.list
+#apt-get update && apt-get dist-upgrade
+#mount -t proc proc /proc && sudo mount -t sysfs sysfs /sys
+#echo "proc /proc proc rw 0 0" >> /etc/fstab
+#echo "sysfs /sys sysfs rw 0 0" >> /etc/fstab
+#mount -a
+}}}
+
+Exit:
+{{{
+#umount -a
+#umount /proc && umount /sys
+exit
+sudo umount bootstrap
+}}}
