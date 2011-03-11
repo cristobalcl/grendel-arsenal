@@ -162,7 +162,7 @@ sudo debootstrap lenny bootstrap http://ftp.fr.debian.org/debian
 
 Mounting bootstrap:
 {{{
-#sudo mount -t auto -o loop debian_stable.raw debootstrap
+#sudo mount -t auto -o loop debian_stable.raw bootstrap
 sudo chroot bootstrap
 }}}
 
