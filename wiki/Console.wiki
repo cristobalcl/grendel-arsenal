@@ -112,6 +112,14 @@ timidity [file.mid]
 
 = Building and installing =
 
+== Aptitude ==
+|| Update packages database || `sudo aptitude update` ||
+|| Search package || `sudo aptitude search [NAME]` ||
+|| Install package || `sudo aptitude install [PACKAGE NAMES]` ||
+|| Remove package || `sudo aptitude purge [PACKAGE NAMES]` ||
+|| Upgrade packages || `sudo aptitude update && sudo aptitude safe-upgrade` ||
+|| Hold package || `sudo aptitude hold [PACKAGE NAMES]` ||
+
 == Make ==
 
 === Verbose output ===
