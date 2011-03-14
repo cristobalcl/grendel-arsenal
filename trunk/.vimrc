@@ -123,12 +123,8 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
-map  <C-Right> :tabnext<CR>
-imap <C-Right> <C-O>:tabnext<CR>
-map  <C-Left> :tabprev<CR>
-imap <C-Left> <C-O>:tabprev<CR>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nmap <C-t> :tabnew<CR>
 imap <C-t> <Esc>:tabnew<CR>
 nmap <C-w> :tabclose<CR>
