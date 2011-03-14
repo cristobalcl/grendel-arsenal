@@ -188,3 +188,4 @@ gggqG
 
 = Links =
   * [http://www.rayninfo.co.uk/vimtips.html Best of Vim Tips]
+  * [http://items.sjbach.com/319/configuring-vim-right Configuring Vim right]
