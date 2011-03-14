@@ -127,6 +127,8 @@ map  <C-Right> :tabnext<CR>
 imap <C-Right> <C-O>:tabnext<CR>
 map  <C-Left> :tabprev<CR>
 imap <C-Left> <C-O>:tabprev<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 
 " From http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
 set tabline=%!MyTabLine()		" custom tab pages line
