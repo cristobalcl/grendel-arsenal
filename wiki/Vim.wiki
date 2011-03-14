@@ -67,14 +67,6 @@ From normal mode:
 :set ff=unix
 }}}
 
-= Buffers =
-
-|| List || `:ls` ||
-|| Go to || `:b [NUMBER or NAME]` or [NUMBER]Ctrl+6||
-|| Previous || `:bp` ||
-|| Next || `:bn` ||
-|| Switch || Ctrl+6 ||
-
 = Characters =
 
 == Insert character by its number value ==
@@ -106,6 +98,18 @@ I// <ESC>
 .
 }}} 
   * Same in the last line.
+
+= Buffers =
+
+|| List || `:ls` ||
+|| Go to || `:b [NUMBER or NAME]` or [NUMBER]Ctrl+6||
+|| Previous || `:bp` ||
+|| Next || `:bn` ||
+|| Switch || Ctrl+6 ||
+
+= Tabs =
+
+|| Open each buffer in one tab || `:tab sball` ||
 
 = External commands =
 
