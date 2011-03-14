@@ -109,7 +109,27 @@ I// <ESC>
 
 = Tabs =
 
+|| Open files in different tabs from command line || `vim -p [FILES]` ||
+|| Open file in new tab || `:tabe [FILE]` ||
+|| Open file in new tab or jump to it if it's open || `:tab drop [FILE]` ||
+|| Find file and open in new tab || `:tabfind [FILE]` ||
+|| Open file below cursor in new tab || Ctrl+W gf ||
 || Open each buffer in one tab || `:tab sball` ||
+|| Open this buffer in other tab || `:tab sp` ||
+|| Move window to new tab || Ctrl+W T ||
+|| Close window (if there is no other window the tab is closed) || Ctrl+W C ||
+|| Close tab || `:tabc` ||
+|| Close all others tabs || `:tabo` ||
+
+== Navigation ==
+
+|| List tabs || `:tabs` ||
+|| Next tab || `gt` ||
+|| Previous tab || `gT` ||
+|| Tab number [i] || `[i]gt` ||
+
+== References ==
+  * [http://vim.wikia.com/wiki/Using_tab_pages Using tab pages]
 
 = External commands =
 
