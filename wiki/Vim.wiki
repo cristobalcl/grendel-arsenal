@@ -67,6 +67,14 @@ From normal mode:
 :set ff=unix
 }}}
 
+= Buffers =
+
+|| List || `:ls` ||
+|| Go to || `:b [NUMBER or NAME]` or [NUMBER]Ctrl+6||
+|| Previous || `:bp` ||
+|| Next || `:bn` ||
+|| Switch || Ctrl+6 ||
+
 = Characters =
 
 == Insert character by its number value ==
