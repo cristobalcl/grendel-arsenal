@@ -11,6 +11,8 @@ let mapleader = ","
 
 set hidden
 set switchbuf=useopen,usetab,newtab
+nnoremap <F9> :sbnext<CR>
+nnoremap <S-F9> :sbprevious<CR>
 
 set wildmenu
 set wildmode=list:longest,full
