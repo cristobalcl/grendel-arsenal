@@ -3,8 +3,22 @@ if &t_Co > 1
   syntax enable
 endif
 
+set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+let mapleader = ","
+
+set hidden
+set switchbuf=useopen,usetab,newtab
+
+set wildmenu
+set wildmode=list:longest,full
+
+set title
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
+
+"set scrolloff=3
 
 filetype on
 filetype indent on
@@ -13,12 +27,14 @@ filetype plugin on
 let b:tex_flavor = 'pdflatex'
 
 "set smartindent
-set tabstop=2
-set autoindent shiftwidth=2
+set tabstop=4
+set autoindent shiftwidth=4
 "set expandtab
 
 set hlsearch   " Iluminar búsquedas (buscar con *)
 set incsearch  " Búsqueda incremental
+set ignorecase
+set smartcase
 
 map <CR> o<ESC>
 
@@ -47,10 +63,16 @@ set showmode
 " Swap words
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 
+" Append line after next line
+nnoremap gl ddpkJ
+
 map <F5> :make<CR>
 map <F6> :copen<CR>
 map <F7> :cp<CR>
 map <F8> :cn<CR>
+
+iabbr --- --------------------------------------------------------------------------------
+iabbr ### ################################################################################
 
 set spelllang=es,en_us
 set spellsuggest=10
@@ -95,3 +117,94 @@ function! SuperCleverTab()
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs
+map  <C-Right> :tabnext<CR>
+imap <C-Right> <C-O>:tabnext<CR>
+map  <C-Left> :tabprev<CR>
+imap <C-Left> <C-O>:tabprev<CR>
+
+" From http://vim.wikia.com/wiki/Show_tab_number_in_your_tab_line
+set tabline=%!MyTabLine()		" custom tab pages line
+function MyTabLine()
+
+	let s = '' " complete tabline goes here
+
+	" loop through each tab page
+	for t in range(tabpagenr('$'))
+
+		" set highlight for tab number and &modified 
+		let s .= '%#TabLineSel#'
+
+		" set the tab page number (for mouse clicks)
+		let s .= '%' . (t + 1) . 'T'
+
+		" set page number string
+		let s .=  t + 1 . ':' 
+
+		" get buffer names and statuses
+		let n = ''  "temp string for buffer names while we loop and check buftype
+		let m = 0	" &modified counter
+		let bc = len(tabpagebuflist(t + 1))  "counter to avoid last ' '
+
+		" loop through each buffer in a tab
+		for b in tabpagebuflist(t + 1)
+
+			" buffer types: quickfix gets a [Q], help gets [H]{base fname}
+			" others get 1dir/2dir/3dir/fname shortened to 1/2/3/fname
+			if getbufvar( b, "&buftype" ) == 'help'
+				let n .= '[H]' . fnamemodify( bufname(b), ':t:s/.txt$//' )
+			elseif getbufvar( b, "&buftype" ) == 'quickfix'	
+				let n .= '[Q]'
+			else
+				let n .= pathshorten(bufname(b))
+			endif
+
+			" check and ++ tab's &modified count
+			if getbufvar( b, "&modified" )
+				let m += 1
+			endif
+
+			" no final ' ' added...formatting looks better done later
+			if bc > 1
+				let n .= ' '
+			endif
+
+			let bc -= 1
+
+		endfor
+
+		" add modified label [n+] where n pages in tab are modified
+		if m > 0
+			let s .= '[' . m . '+]'
+		endif
+
+		" select the highlighting for the buffer names
+		" my default highlighting only underlines the active tab
+		" buffer names.
+		if t + 1 == tabpagenr()
+			let s .= '%#TabLine#'
+		else
+			let s .= '%#TabLineSel#'
+		endif
+
+		" add buffer names
+		let s .= n
+
+		" switch to no underlining and add final space to buffer list
+		let s .= '%#TabLineSel#' . ' '
+
+	endfor
+
+	" after the last tab fill with TabLineFill and reset tab page nr
+	let s .= '%#TabLineFill#%T'
+
+	" right-align the label to close the current tab page
+	if tabpagenr('$') > 1
+		let s .= '%=%#TabLineFill#%999Xclose'
+	endif
+
+	return s
+
+endfunction
