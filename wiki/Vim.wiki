@@ -124,8 +124,8 @@ I// <ESC>
 == Navigation ==
 
 || List tabs || `:tabs` ||
-|| Next tab || `gt` ||
-|| Previous tab || `gT` ||
+|| Previous tab || `gT` or Ctrl+PageUp ||
+|| Next tab || `gt` or Ctrl+PageDown ||
 || Tab number [i] || `[i]gt` ||
 
 == References ==
