@@ -182,5 +182,9 @@ gggqG
 == C++ completion ==
   * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
 
+== MiniBufExplorer ==
+  * [http://fholgado.com/minibufexpl MiniBufExplorer]
+  * [https://github.com/fholgado/minibufexpl.vim Repository]
+
 = Links =
   * [http://www.rayninfo.co.uk/vimtips.html Best of Vim Tips]
