@@ -128,8 +128,17 @@ I// <ESC>
 || Next tab || `gt` or Ctrl+PageDown ||
 || Tab number [i] || `[i]gt` ||
 
+== Commands ==
+
+|| Replace in all files of all tabs || `:tabdo %s/foo/bar/gc` ||
+
 == References ==
   * [http://vim.wikia.com/wiki/Using_tab_pages Using tab pages]
+
+= Sessions =
+
+|| Save session to `Session.vim` || `:mks!` ||
+|| Load `Session.vim` || `:so Session.vim` ||
 
 = External commands =
 
