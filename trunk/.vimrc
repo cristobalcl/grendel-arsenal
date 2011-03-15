@@ -123,6 +123,7 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
+set sessionoptions-=tabpages
 nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nmap <C-t> :tabnew<CR>
