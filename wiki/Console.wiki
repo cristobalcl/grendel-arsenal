@@ -22,6 +22,8 @@ sudo aptitude install yakuake
 || Create new tabs || `CTRL+n` ||
 || Close tab (bash logout) || `CTRL+d` ||
 || Navigate throw tabs || `SHIFT`+`Left` or `SHIFT`+`Right` ||
+|| Split || `CTRL`+`SHIFT`+t ||
+|| Change window || `SHIFT`+`TAB` ||
 
 = Working with files and directories =
 
