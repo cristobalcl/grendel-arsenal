@@ -106,6 +106,7 @@ I// <ESC>
 || Previous || `:bp` ||
 || Next || `:bn` ||
 || Switch || Ctrl+6 ||
+|| Close || `:bd` ||
 
 = Tabs =
 
