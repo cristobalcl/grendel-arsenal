@@ -172,6 +172,11 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 
 = Tips =
 
+== Remove ^M characters ==
+{{{
+:%s/\r//g
+}}}
+
 == Sort ==
 {{{
 :sort
