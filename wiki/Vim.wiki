@@ -177,6 +177,9 @@ Use `%` as the filename. For example, to count how many words are in the file yo
 :%s/\r//g
 }}}
 
+Reference:
+  * [http://www.matware.com.ar/vim/como-sacar-los-retornos-de-carro-de-dos-m-con-vim.html Como sacar los retornos de carro de DOS ^M con Vim]
+
 == Sort ==
 {{{
 :sort
