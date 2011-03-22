@@ -123,10 +123,27 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
-set sessionoptions-=tabpages
+"set sessionoptions-=tabpages
 nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
 nmap <C-t> :tabnew<CR>
 imap <C-t> <Esc>:tabnew<CR>
 nmap <C-c> :tabclose<CR>
 imap <C-c> <Esc>:tabclose<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CloseHiddenBuffers()
+	" figure out which buffers are visible in any tab
+	let visible = {}
+	for t in range(1, tabpagenr('$'))
+		for b in tabpagebuflist(t)
+			let visible[b] = 1
+		endfor
+	endfor
+	" close any buffer that's loaded and not visible
+	for b in range(1, bufnr('$'))
+		if bufloaded(b) && !has_key(visible, b)
+			exe 'bd ' . b
+		endif
+	endfor
+endfun
