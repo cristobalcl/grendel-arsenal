@@ -121,7 +121,7 @@ I// <ESC>
 || Close window (if there is no other window the tab is closed) || Ctrl+W C ||
 || Close tab || `:tabc` ||
 || Close all others tabs || `:tabo` ||
-|| Duplicate buffer in new tab || Ctrl+W s Ctrl+W t ||
+|| Duplicate buffer in new tab || Ctrl+W s Ctrl+W T ||
 
 == Navigation ==
 
