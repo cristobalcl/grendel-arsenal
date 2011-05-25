@@ -25,3 +25,5 @@ alias wcat='wget -qO-'
 
 alias here='pwd | xsel --clipboard'
 alias there='cd `xsel --clipboard`'
+
+alias vims='vim -S Session.vim'                                                                                                                                                    
