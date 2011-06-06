@@ -26,6 +26,18 @@ sudo aptitude install yakuake
 || Close window || `CTRL`+`SHIFT`+w ||
 || Change window || `SHIFT`+`TAB` ||
 
+= Bash keys =
+
+|| Auto-complete || `TAB` ||
+|| Search in history || `CTRL+r` ||
+|| Delete word || `CTRL+w` ||
+|| Delete until space || `ESC+DEL` ||
+|| Delete until beggining || `CTRL+u` ||
+|| Delete until end || `CTRL+k` ||
+|| Swap chars || `CTRL+t` ||
+|| Swap words || `ESC, t` ||
+|| Exit || `CTRL+d` ||
+
 = Working with files and directories =
 
 == Info about a file ==
