@@ -82,6 +82,39 @@ sudo aptitude install yakuake
 
 = Scripting =
 
+== Tests ==
+File exists:
+{{{
+if [ -e "FILENAME" ]
+then
+  echo "FILENAME is a block device."
+fi
+}}}
+
+Regular file:
+{{{
+if [ -f "FILENAME" ]
+then
+  echo "FILENAME is a regular file."
+fi
+}}}
+
+Not zero size:
+{{{
+if [ -s "FILENAME" ]
+then
+  echo "FILENAME is not zero size."
+fi
+}}}
+
+Directory:
+{{{
+if [ -d "FILENAME" ]
+then
+  echo "FILENAME is a directory."
+fi
+}}}
+
 == Loops ==
 For loop syntax:
 {{{
