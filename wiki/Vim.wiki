@@ -77,8 +77,8 @@ From normal mode:
   * [http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-V_digit Reference]
 
 == Increment/Decrement ==
-|| Decrement || <C-a> ||
-|| Increment || <C-x> ||
+|| Decrement || `<C-a>` ||
+|| Increment || `<C-x>` ||
 
 = Repetitions =
 
