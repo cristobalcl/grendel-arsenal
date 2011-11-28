@@ -241,3 +241,7 @@ sudo umount bootstrap
 
 References:
   * [http://linux.koolsolutions.com/2009/06/05/howto-running-32-bit-x-windows-application-in-a-bootstrap-system-using-bind-mount/ Running 32-bit X Windows application on 64-bit system using bind mount in Linux]
+
+= More references =
+
+* [http://www.thegeekstuff.com/2010/11/50-linux-commands/?a 50 Most Frequently Used UNIX / Linux Commands (With Examples)]
