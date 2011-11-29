@@ -11,3 +11,11 @@
 
 "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
   m:0x8 + c:55
+
+"amixer set Master 10%+"
+  m:0x18 + c:86
+  Alt+Mod2 + KP_Add 
+
+"amixer set Master 10%-"
+  m:0x18 + c:82
+  Alt+Mod2 + KP_Subtract 
