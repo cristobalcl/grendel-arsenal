@@ -82,6 +82,16 @@ sudo aptitude install yakuake
 
 = Scripting =
 
+== Variables ==
+
+=== File names, paths, extensions ===
+{{{
+FULL=/path/to/file.ext
+FILENAME=$(basename $FULL)
+NAME=${FILENAME%.*}
+EXTENSION=${FILENAME##*.}
+}}}
+
 == Tests ==
 File exists:
 {{{
