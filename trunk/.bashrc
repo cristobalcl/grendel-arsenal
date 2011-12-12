@@ -27,3 +27,6 @@ alias here='pwd | xsel --clipboard'
 alias there='cd "`xsel --clipboard`"'
 
 alias vims='vim -S Session.vim'                                                                                                                                                    
+alias vim='vim -p'
+
+alias lost='cat >> ~/lost.txt'
