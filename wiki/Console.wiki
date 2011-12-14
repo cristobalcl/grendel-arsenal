@@ -145,6 +145,11 @@ For over find:
 for f in `find -iname "[FILENAME]"`; do cat $f; done
 }}}
 
+Loop over find (files edited today in the example) with files with spaces using *while read*:
+{{{
+find -type f -iname "*.py" -mtime -1 | while read f; do echo $f; done
+}}}
+
 References:
   * [http://www.cyberciti.biz/faq/bash-for-loop/ Bash For Loop Examples]
 
