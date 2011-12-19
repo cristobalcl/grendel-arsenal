@@ -16,29 +16,28 @@ __status__ = "Development" # "Prototype", "Development", "Production"
 
 
 import sys 
-import optparse
+import argparse
 
 
 def processCommandLine():
-  parser = optparse.OptionParser(usage="%prog [options] arg", version="%prog "+__version__)
-  #parser.add_option("-u", "--url", dest="url", default="http://grendel-arsenal.googlecode.com", help="URL")
-  parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=True)
+	parser = argparse.ArgumentParser(description="sub-o-matic")
+	parser.add_argument("input")
+	parser.add_argument("output")
+	parser.add_argument("-f", "--from", default=0, help="start time (seconds)")
+	parser.add_argument("-t", "--to", default=0, help="finish time (seconds)")
+	parser.add_argument("-o", "--offset", default=0, help="offset time (seconds)")
+	parser.add_argument("-v", "--verbose", action="store_true")
 
-  (options, args) = parser.parse_args()
-
-  #if len(args) != 1:
-  #  parser.error("incorrect number of arguments")
-
-  return (options, args)
+	return parser.parse_args()
 
   
 def main():
-  (options, args) = processCommandLine()
+	args = processCommandLine()
 
-  # TODO
+	# TODO
 
-  return 0
+	return 0
   
 
 if __name__=="__main__":
-  sys.exit(main())
+	sys.exit(main())
