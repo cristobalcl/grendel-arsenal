@@ -5,6 +5,8 @@ export EDITOR=vim
 #export PATH=$HOME/bin:$PATH
 export CDPATH=$CDPATH:$HOME
 
+#set -o vi
+
 shopt -s cdspell
 
 alias l='ls -hlA'
