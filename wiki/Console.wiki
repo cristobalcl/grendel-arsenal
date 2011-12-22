@@ -31,7 +31,7 @@ sudo aptitude install yakuake
 || Auto-complete || `TAB` ||
 || Search in history || `CTRL+r` ||
 || Delete word || `CTRL+w` ||
-|| Delete until space || `ESC+DEL` ||
+|| Delete until space || `ESC, DEL` ||
 || Delete until beggining || `CTRL+u` ||
 || Delete until end || `CTRL+k` ||
 || Swap chars || `CTRL+t` ||
