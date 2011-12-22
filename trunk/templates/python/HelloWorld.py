@@ -20,12 +20,10 @@ import argparse
 
 
 def processCommandLine():
-	parser = argparse.ArgumentParser(description="sub-o-matic")
-	parser.add_argument("input")
-	parser.add_argument("output")
-	parser.add_argument("-f", "--from", default=0, help="start time (seconds)")
-	parser.add_argument("-t", "--to", default=0, help="finish time (seconds)")
-	parser.add_argument("-o", "--offset", default=0, help="offset time (seconds)")
+	parser = argparse.ArgumentParser(description="Hello World!")
+	parser.add_argument("arg1", help="help for arg1")
+	parser.add_argument("arg2", help="help for arg2")
+	parser.add_argument("-p", "--param", metavar="PARAM", dest="param", type=int, default=0, required=True, help="help for param")
 	parser.add_argument("-v", "--verbose", action="store_true")
 
 	return parser.parse_args()
