@@ -1,9 +1,11 @@
 # Append to your "~/.bashrc".
 
-export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]$ "
-export EDITOR=vim
-#export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 export CDPATH=$CDPATH:$HOME
+
+export PS1="\[\033[1;34m\]\u@\H \[\033[1;33m\]\w\[\033[0m\]\$ "
+export PROMPT_COMMAND=". prompt.sh"
+export EDITOR=vim
 
 #set -o vi
 
