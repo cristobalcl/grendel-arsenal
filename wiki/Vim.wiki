@@ -221,14 +221,11 @@ gggqG
 }}}
 
 = Useful plugins =
+  * [http://www.vim.org/scripts/script.php?script_id=2332 Pathogen] Install and unistall vim plugins easily.
   * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
   * [http://www.vim.org/scripts/script.php?script_id=1697 Surround]
   * [http://www.vim.org/scripts/script.php?script_id=2540 snipMate]
   * [http://www.vim.org/scripts/script.php?script_id=1189 Matrix]
-
-== MiniBufExplorer ==
-  * [http://fholgado.com/minibufexpl MiniBufExplorer]
-  * [https://github.com/fholgado/minibufexpl.vim Repository]
 
 = Links =
   * [http://www.rayninfo.co.uk/vimtips.html Best of Vim Tips]
