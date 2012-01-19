@@ -1,6 +1,6 @@
 set nocompatible
 
-call pathogen#infect()
+"call pathogen#infect()
 
 if &t_Co > 1 || has("gui_running")
 	set background=dark
