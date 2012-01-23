@@ -1,5 +1,6 @@
 # Append to your "~/.bashrc".
 
+#export TERM=xterm-256color                                                                                                                                                                                                                                                    
 export PATH=$HOME/bin:$PATH
 export CDPATH=$CDPATH:$HOME
 
@@ -30,7 +31,8 @@ alias wcat='wget -qO-'
 alias here='pwd | xsel --clipboard'
 alias there='cd "`xsel --clipboard`"'
 
-alias vims='vim -S Session.vim'                                                                                                                                                    
-alias vim='vim -p'
+alias vims='TERM=xterm-256color vim -S Session.vim'                                                                                                                                                                                                                            
+alias vim='TERM=xterm-256color vim -p'                                                                                                                                                                                                                                         
 
 alias lost='cat >> ~/lost.txt'
+alias 7up='svn up'                                                                                                                                                                                                                                                             
