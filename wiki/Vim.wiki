@@ -225,7 +225,10 @@ gggqG
   * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
   * [http://www.vim.org/scripts/script.php?script_id=1697 Surround]
   * [http://www.vim.org/scripts/script.php?script_id=2715 UltiSnip]
+  * [http://www.vim.org/scripts/script.php?script_id=1658 NerdTree]
+  * [https://github.com/jistr/vim-nerdtree-tabs NerdTreeTabs]
   * [http://www.vim.org/scripts/script.php?script_id=1234 YankRing]
+  * [http://www.vim.org/scripts/script.php?script_id=2572 ack.vim] ([https://github.com/tyok/ack.vim fork])
   * [https://github.com/tpope/vim-repeat VimRepeat]
   * [http://sjl.bitbucket.org/gundo.vim/ Gundo]
   * [http://www.vim.org/scripts/script.php?script_id=1189 Matrix]
