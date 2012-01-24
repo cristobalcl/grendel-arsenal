@@ -69,6 +69,14 @@ From normal mode:
 
 = Edition =
 
+== Change word ==
+In normal mode:
+{{{
+ciw
+}}}
+
+This remove the word and enter in insert mode.
+
 == Insert character by its number value ==
 {{{
 <C-V>, [Number in decimal, octal or hexadecimal]
