@@ -241,3 +241,5 @@ gggqG
   * [http://nvie.com/posts/how-i-boosted-my-vim/ How I boosted my Vim]
   * [http://stevelosh.com/blog/2010/09/coming-home-to-vim/ Coming Home to Vim]
   * [http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html 256 Terminal colors and their 24bit equivalent]
+  * [http://code.google.com/p/vimcolorschemetest/ 	
+vimcolorschemetest]
