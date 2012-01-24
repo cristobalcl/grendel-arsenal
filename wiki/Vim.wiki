@@ -223,6 +223,7 @@ gggqG
 = Useful plugins =
   * [http://www.vim.org/scripts/script.php?script_id=2332 Pathogen] Install and unistall vim plugins easily.
   * [http://www.vim.org/scripts/script.php?script_id=1520 OmniCppComplete] (see [http://vim.wikia.com/wiki/VimTip1608 C++ code completion] for configuration instructions).
+  * [http://vim.sourceforge.net/scripts/script.php?script_id=273 taglist.vim]
   * [http://www.vim.org/scripts/script.php?script_id=1697 Surround]
   * [http://www.vim.org/scripts/script.php?script_id=2715 UltiSnip]
   * [http://www.vim.org/scripts/script.php?script_id=1658 NerdTree]
