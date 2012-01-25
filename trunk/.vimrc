@@ -1,10 +1,9 @@
 set nocompatible
 
-"call pathogen#infect()
+call pathogen#infect()
 
 if &t_Co > 1 || has("gui_running")
 	set background=dark
-	syntax on
 endif
 
 if &t_Co >= 256 || has("gui_running")
@@ -30,7 +29,12 @@ set title
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
 
+set cursorline
+
 "set scrolloff=3
+
+syntax on
+set ofu=syntaxcomplete#Complete
 
 filetype on
 filetype indent on
@@ -39,12 +43,15 @@ filetype plugin on
 let b:tex_flavor = 'pdflatex'
 
 "set smartindent
-set tabstop=4
 set autoindent shiftwidth=4
-set copyindent
 set shiftround
 set smarttab
 "set expandtab
+set textwidth=79
+set tabstop=4
+set softtabstop=4
+set copyindent
+
 set showmatch
 set hlsearch   " Iluminar búsquedas (buscar con *)
 set incsearch  " Búsqueda incremental
@@ -52,7 +59,10 @@ set ignorecase
 set smartcase
 set clipboard=unnamedplus
 
-nmap <leader>s :noh<CR>
+nmap <leader>s :nohlsearch<CR>
+nmap <leader>n :set number!<CR>
+set relativenumber
+nmap <leader>r :set relativenumber!<CR>
 
 "set list
 nmap <leader>c :set list!<CR>
@@ -61,7 +71,8 @@ set listchars=tab:▸.,trail:.,extends:…,nbsp:.,eol:¬
 "highlight NonText ctermfg=8 ctermbg=0
 "highlight SpecialKey ctermfg=8 ctermbg=0
 
-"map <CR> o<ESC>
+nmap <buffer> <CR> <C-]>
+nmap <buffer> <BS> <C-T>
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -71,8 +82,6 @@ map <A-DOWN> gj
 map <A-UP> gk
 imap <A-DOWN> <ESC>lgji
 imap <A-UP> <ESC>lgki
-
-nmap <silent> <Leader>n :nohlsearch<CR>
 
 " Repite la última acción y posiciona el cursor al comienzo de la zona
 " modificada.
@@ -99,9 +108,9 @@ nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 nnoremap gl ddpkJ
 
 map <F5> :make<CR>
-map <F6> :copen<CR>
-map <F7> :cp<CR>
-map <F8> :cn<CR>
+map <F6> :cc<CR>
+map <A-Left> :cp<CR>
+map <A-Right> :cn<CR>
 
 "iabbr --- --------------------------------------------------------------------------------
 "iabbr ### ################################################################################
@@ -112,12 +121,15 @@ map <C-F5> :setlocal spell<CR>
 map <M-F5> z=
 imap <M-F5> <ESC>z=
 
-map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-set tags+=./tags
+"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+map <F8> :!ctags -R .<CR><CR>
+set tags+=./.tags
 "set tags+=~/.vim/tags/cpp
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4
+
+nmap <silent> <leader>d g<C-]><CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OmniCppComplete plugin (you need to install, download it at http://www.vim.org/scripts/script.php?script_id=1520)
@@ -188,6 +200,7 @@ function! ToggleMouse()
 	endif
 endfunction
 nnoremap <Leader>m :call ToggleMouse()<CR>
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color test: Save this file, then enter ':so %'
@@ -235,3 +248,28 @@ endfunction
 
 nmap <silent> <leader>W :call MarkWindowSwap()<CR>
 nmap <silent> <leader>w :call DoWindowSwap()<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ack.vim
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTreeTabs
+map <Leader>f <plug>NERDTreeTabsToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TagList
+autocmd FileType taglist setlocal norelativenumber
+nnoremap <silent> <Leader>t :TlistToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" supertab
+au FileType python setlocal omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
