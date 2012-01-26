@@ -260,3 +260,4 @@ References:
 = More references =
 
 * [http://www.thegeekstuff.com/2010/11/50-linux-commands/?a 50 Most Frequently Used UNIX / Linux Commands (With Examples)]
+* [http://sed.sourceforge.net/grabbag/scripts/list_urls.sed sed script for extract URLs from HTML]
