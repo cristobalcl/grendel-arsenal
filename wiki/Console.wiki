@@ -109,6 +109,14 @@ then
 fi
 }}}
 
+File does not exist:
+{{{
+if [ ! -f "FILENAME" ]
+then
+  echo "FILENAME does not exist."
+fi
+}}}
+
 Not zero size:
 {{{
 if [ -s "FILENAME" ]
