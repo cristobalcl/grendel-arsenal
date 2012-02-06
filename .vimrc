@@ -92,6 +92,11 @@ set tags+=./.tags                       " Tags file
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4
 nmap <silent> <leader>d g<C-]><CR>     " Go to tag definition
+nmap <CR> <C-W>]
+nmap <BS> :pop<CR>
+"nmap <buffer> <A-F7> :ptselect<cr>
+"nmap <buffer> <F8> :tnext<cr>
+"nmap <buffer> <C-F8> :tprev<cr>
 
 " Identation
 "set smartindent
@@ -124,8 +129,8 @@ match ErrorMsg /\s\+$/                  " Highlight spaces at the end of the lin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Help
-nmap <buffer> <CR> <C-]>                " Navigate into
-nmap <buffer> <BS> <C-T>                " Nagivate back
+"nmap <buffer> <CR> <C-]>                " Navigate into
+"nmap <buffer> <BS> <C-T>                " Nagivate back
 
 inoremap <F1> <ESC>                     " Disable F1 key
 nnoremap <F1> <ESC>
