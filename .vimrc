@@ -180,10 +180,10 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-"_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>     " Swap words
-nnoremap <silent> g
+" Swap words
+nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 " Append line after next line
-nnoremap gl d
+nnoremap gl ddpkJ
 
 " Move lines and visual selections up and down
 nnoremap <C-Down> :m+<CR>==
