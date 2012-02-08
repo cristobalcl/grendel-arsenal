@@ -24,6 +24,9 @@ let mapleader = ","
 " Reload vim configuration
 nnoremap <Leader>v :source $MYVIMRC<CR>
 
+"set sessionoptions+=buffers,curdir,folds,tabpages
+set sessionoptions-=blank,help
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files and directories
 set backupdir=~/.vim/tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -41,16 +44,22 @@ set wildmode=list:longest,full
 " Buffers
 set hidden                               " Keep files open in background
 set switchbuf=useopen,usetab,newtab      " Buffer behaviour
-nnoremap <F9> :sbnext<CR>                " Jump to next buffer
-nnoremap <S-F9> :sbprevious<CR>          " Jump to previous buffer
+" Jump to next buffer
+nnoremap <F9> :sbnext<CR>
+" Jump to previous buffer
+nnoremap <S-F9> :sbprevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
 "set sessionoptions-=tabpages
-nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>      " Move tabs
-nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>        " Move tabs
-nmap <C-t> :tabnew<CR>                  " Create tab
-imap <C-t> <Esc>:tabnew<CR>             " Create tab
+" Move tabs
+nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" Move tabs
+nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . tabpagenr()<CR>
+" Create tab
+nmap <C-t> :tabnew<CR>
+" Create tab
+imap <C-t> <Esc>:tabnew<CR>
 "nmap <C-c> :tabclose<CR>
 "imap <C-c> <Esc>:tabclose<CR>
 
@@ -65,8 +74,12 @@ set laststatus=2
 set cursorline                           " Highlight cursor line
 "set scrolloff=3
 set relativenumber                       " Relative line numbers
-nmap <leader>r :set relativenumber!<CR>  " Switch relative line numbers
-nmap <leader>n :set number!<CR>          " Switch line numbers
+" Switch relative line numbers
+nmap <leader>l :set cursorline!<CR>
+" Switch relative line numbers
+nmap <leader>r :set relativenumber!<CR>
+" Switch line numbers
+nmap <leader>n :set number!<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax and languages
@@ -78,21 +91,27 @@ filetype plugin on
 autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
 let b:tex_flavor = 'pdflatex'           " Compiler for latex files
 
-map <F5> :make<CR>                      " Compile
-map <F6> :cc<CR>                        " Show errors
-map <A-Left> :cp<CR>                    " Previous error
-map <A-Right> :cn<CR>                   " Next error
+" Compile
+map <F5> :make<CR>
+" Show errors
+map <F6> :cc<CR>
+" Previous error
+map <A-Left> :cp<CR>
+" Next error
+map <A-Right> :cn<CR>
 
 " Tags
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
-map <F8> :!ctags -R .<CR><CR>           " Compile tags
+" Compile tags
+map <F8> :!ctags -R .<CR><CR>
 set tags+=./.tags                       " Tags file
 "set tags+=~/.vim/tags/cpp
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/sdl
 "set tags+=~/.vim/tags/qt4
-nmap <silent> <leader>d g<C-]><CR>     " Go to tag definition
-nmap <CR> <C-W>]
+" Go to tag definition
+nmap <silent> <leader>d g<C-]><CR>
+nmap <leader><CR> <C-W>]
 nmap <BS> :pop<CR>
 "nmap <buffer> <A-F7> :ptselect<cr>
 "nmap <buffer> <F8> :tnext<cr>
@@ -116,7 +135,8 @@ set hlsearch                            " Highligh search result
 set incsearch                           " Incremental search
 set ignorecase                          " Ignore case
 set smartcase                           " Smartcase
-nmap <leader>s :nohlsearch<CR>          " Clear search highlight
+" Clear search highlight
+nmap <leader>s :nohlsearch<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show special characters
@@ -129,10 +149,13 @@ match ErrorMsg /\s\+$/                  " Highlight spaces at the end of the lin
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Help
-"nmap <buffer> <CR> <C-]>                " Navigate into
-"nmap <buffer> <BS> <C-T>                " Nagivate back
+"" Navigate into
+"nmap <buffer> <CR> <C-]>
+"" Nagivate back
+"nmap <buffer> <BS> <C-T>
 
-inoremap <F1> <ESC>                     " Disable F1 key
+" Disable F1 key
+inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
@@ -146,14 +169,21 @@ imap <A-UP> <ESC>lgki
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edition
-map . .`[                               " Repeat last action and move to the beginning of the edition
+" Repeat last action and move to the beginning of the edition
+map . .`[
 
-nnoremap <F2> :set invpaste paste?<CR>  " Switch paste mode
+" Run macro 'q'
+nnoremap QQ @q
+
+" Switch paste mode
+nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>     " Swap words
-nnoremap gl ddpkJ                       " Append line after next line
+"_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>     " Swap words
+nnoremap <silent> g
+" Append line after next line
+nnoremap gl d
 
 " Move lines and visual selections up and down
 nnoremap <C-Down> :m+<CR>==
@@ -163,15 +193,22 @@ inoremap <C-Up> <Esc>:m-2<CR>==gi
 vnoremap <C-Down> :m'>+<CR>gv=gv
 vnoremap <C-Up> :m-2<CR>gv=gv
 
+" Change case of whole word
+nnoremap <leader>u guiw
+nnoremap <leader>U gUiw
+
 set clipboard=unnamedplus               " Clipboard
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checker
 set spelllang=es,en_us
 set spellsuggest=10
-map <C-F5> :setlocal spell<CR>          " Start spell checker
-map <M-F5> z=                           " Show suggestions
-imap <M-F5> <ESC>z=                     " Show suggestions
+" Start spell checker
+map <C-F5> :setlocal spell<CR>
+" Show suggestions
+map <M-F5> z=
+" Show suggestions
+imap <M-F5> <ESC>z=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Abbreviations
@@ -219,7 +256,7 @@ function! CloseHiddenBuffers()
 		endif
 	endfor
 endfun
-nnoremap <Leader>C :call CloseHiddenBuffers<CR>
+nnoremap <Leader>C :call CloseHiddenBuffers()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Swicth mouse on/off
@@ -260,6 +297,20 @@ nmap <silent> <leader>W :call MarkWindowSwap()<CR>
 nmap <silent> <leader>w :call DoWindowSwap()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Chage to UPPER CASE, lower case and Tittle Case (http://vim.wikia.com/wiki/Switching_case_of_characters)
+function! TwiddleCase(str)
+	if a:str ==# toupper(a:str)
+		let result = tolower(a:str)
+	elseif a:str ==# tolower(a:str)
+		let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+	else
+		let result = toupper(a:str)
+	endif
+	return result
+endfunction
+vnoremap ~ ygv"=TwiddleCase(@")<CR>Pgv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OmniCppComplete plugin
 "let OmniCpp_NamespaceSearch = 1
 "let OmniCpp_GlobalScopeSearch = 1
@@ -271,7 +322,6 @@ nmap <silent> <leader>w :call DoWindowSwap()<CR>
 "let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 "" automatically open and close the popup menu / preview window
 "au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-"set completeopt=menuone,menu,longest,preview
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " UltiSnips
@@ -294,6 +344,6 @@ nnoremap <silent> <Leader>t :TlistToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " supertab
-au FileType python setlocal omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+"au FileType python setlocal omnifunc=pythoncomplete#Complete
+"let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,menu,longest,preview
