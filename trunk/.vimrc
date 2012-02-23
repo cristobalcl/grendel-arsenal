@@ -190,7 +190,7 @@ nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 " Append line after next line
 nnoremap gl ddpkJ
 " Cut line and paste before this line
-nnoremap gL DO<ESC>p0d^
+nnoremap gL DO<ESC>p0d^==
 
 " Move lines and visual selections up and down
 nnoremap <C-Down> :m+<CR>==
