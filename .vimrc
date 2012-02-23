@@ -180,10 +180,17 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Insert at the beginning of previous line
+nnoremap gi kI
+" Insert in a lonely line before or after the current line
+nnoremap gO O<ESC>O<ESC>o
+nnoremap go o<ESC>o<ESC>O
 " Swap words
 nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
 " Append line after next line
 nnoremap gl ddpkJ
+" Cut line and paste before this line
+nnoremap gL DO<ESC>p0d^
 
 " Move lines and visual selections up and down
 nnoremap <C-Down> :m+<CR>==
