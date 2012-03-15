@@ -73,9 +73,9 @@ set laststatus=2
 " Cursor
 set cursorline                           " Highlight cursor line
 "set scrolloff=3
-set relativenumber                       " Relative line numbers
-" Switch relative line numbers
+" Switch cursor line
 nmap <leader>l :set cursorline!<CR>
+set relativenumber                       " Relative line numbers
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
 " Switch line numbers
