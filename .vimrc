@@ -359,4 +359,5 @@ set completeopt=menuone,menu,longest,preview
 " vimwiki
 let g:vimwiki_camel_case=0
 "let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki', 'path_html': '~/Dropbox/vimwiki/html', 'html_header': '~/Dropbox/vimwiki/template/header.tpl',}]
-let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki', 'path_html': '~/Dropbox/vimwiki/html'}]
+let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki/private', 'path_html': '~/Dropbox/vimwiki/private/html'},
+					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
