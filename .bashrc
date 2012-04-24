@@ -36,3 +36,6 @@ alias vim='TERM=xterm-256color vim -p'
 
 alias lost='cat >> ~/lost.txt'
 alias 7up='svn up'
+
+alias privateOn='encfs ~/Dropbox/.private/ ~/Privado'
+alias privateOff='fusermount -u /home/$USER/Privado'

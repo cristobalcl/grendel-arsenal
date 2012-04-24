@@ -204,6 +204,9 @@ vnoremap <C-Up> :m-2<CR>gv=gv
 nnoremap <leader>u guiw
 nnoremap <leader>U gUiw
 
+" Remove spaces at the end of the line
+nnoremap <leader>S :%s/[ \t]\+$//g<cr>
+
 set clipboard=unnamedplus               " Clipboard
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -227,6 +230,9 @@ iabbr 80*% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 iabbr fi if
 iabbr teh the
+iabbr Teh The
+iabbr urrlib urllib
+iabbr urrlib2 urllib2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SuperCleverTab
@@ -359,5 +365,5 @@ set completeopt=menuone,menu,longest,preview
 " vimwiki
 let g:vimwiki_camel_case=0
 "let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki', 'path_html': '~/Dropbox/vimwiki/html', 'html_header': '~/Dropbox/vimwiki/template/header.tpl',}]
-let g:vimwiki_list=[{'path': '~/Dropbox/vimwiki/private', 'path_html': '~/Dropbox/vimwiki/private/html'},
+let g:vimwiki_list=[{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privado/vimwiki/private/html'},
 					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
