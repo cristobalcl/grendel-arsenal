@@ -67,15 +67,17 @@ From normal mode:
 :set ff=unix
 }}}
 
+= Movement =
+
+|| Move last edition || `. ||
+|| Last position before jump || `` ||
+|| Move back || `<C-o>` ||
+
 = Edition =
 
-== Change word ==
-In normal mode:
-{{{
-ciw
-}}}
-
-This remove the word and enter in insert mode.
+|| Change inner word || `ciw` ||
+|| Change double quoted sentence || `ci"` ||
+|| Change parentheses sentence || `ci(` ||
 
 == Insert character by its number value ==
 {{{
@@ -243,6 +245,7 @@ gggqG
   * [http://www.vim.org/scripts/script.php?script_id=1189 Matrix]
 
 = Links =
+  * [http://mislav.uniqpath.com/2011/12/vim-revisited/]
   * [http://www.rayninfo.co.uk/vimtips.html Best of Vim Tips]
   * [http://items.sjbach.com/319/configuring-vim-right Configuring Vim right]
   * [http://e-texteditor.com/blog/2010/beyond-vi Beyond vi]
