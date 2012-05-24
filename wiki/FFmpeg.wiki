@@ -20,3 +20,6 @@ cd ffmpeg.svn
 ./configure
 make
 }}}
+
+= References =
+https://wiki.archlinux.org/index.php/FFmpeg
