@@ -22,3 +22,19 @@
 "amixer set Master 10%-"
 	m:0x18 + c:82
 	Alt+Mod2 + KP_Subtract
+
+"mocp --previous"
+    m:0x8 + c:38
+    Alt + a
+
+"mocp --stop"
+    m:0x8 + c:39
+    Alt + s
+
+"mocp --play"
+    m:0x8 + c:40
+    Alt + d
+
+"mocp --next"
+    m:0x8 + c:41
+    Alt + f
