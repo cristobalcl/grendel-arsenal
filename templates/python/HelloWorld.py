@@ -15,7 +15,7 @@ __email__ = "grendel.ccl@gmail.com"
 __status__ = "Development" # "Prototype", "Development", "Production"
 
 
-import sys 
+import sys
 import argparse
 
 
@@ -28,14 +28,14 @@ def processCommandLine():
 
 	return parser.parse_args()
 
-  
+
 def main():
 	args = processCommandLine()
 
 	# TODO
 
 	return 0
-  
+
 
 if __name__=="__main__":
 	sys.exit(main())
