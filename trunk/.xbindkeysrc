@@ -27,11 +27,11 @@
     m:0x8 + c:38
     Alt + a
 
-"mocp --stop"
+"mocp --pause"
     m:0x8 + c:39
     Alt + s
 
-"mocp --play"
+"mocp --unpause"
     m:0x8 + c:40
     Alt + d
 
