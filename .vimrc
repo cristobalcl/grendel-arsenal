@@ -80,6 +80,7 @@ set relativenumber                       " Relative line numbers
 nmap <leader>r :set relativenumber!<CR>
 " Switch line numbers
 nmap <leader>n :set number!<CR>
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax and languages
@@ -237,6 +238,7 @@ iabbr 80x% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 iabbr fi if
 iabbr teh the
 iabbr Teh The
+iabbr pritn print
 iabbr urrlib urllib
 iabbr urrlib2 urllib2
 
