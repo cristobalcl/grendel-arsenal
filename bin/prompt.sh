@@ -104,6 +104,6 @@ then
         printf "\033[1;31mWarning: low disk space in / (${usedDiskRoot}%% used)\n"
 fi
 
-PS1="\[\033[0m\]\!! \[\033[1;34m\][\j] \u@\H \[\033[1;33m\]${CurDir}${MoreDirs}${REPO} ${ErrorStatus} "
+PS1="!\[\033[0m\]\! \[\033[1;34m\][\j] \u@\H \[\033[1;33m\]${CurDir}${MoreDirs}${REPO} ${ErrorStatus} "
 
 trap - SIGINT SIGQUIT SIGTSTP
