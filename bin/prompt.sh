@@ -5,8 +5,11 @@
 # Author: Cristóbal Carnero Liñán
 #
 # Features:
+#     - Show command number.
 #     - Show number of jobs.
 #     - Shorten long paths.
+#     - Show if there are files in this directory.
+#     - Show if there are directories inside this directory.
 #     - Show if last command ended in error.
 #     - In SVN repositories indicates status.
 #     - In root Mercurial repositories indicates status.
@@ -32,7 +35,7 @@ fi
 history -a
 
 DIR=`pwd|sed -e "s!$HOME!~!"`
-if [ ${#DIR} -gt 30 ]
+if [ ${#DIR} -gt 31 ]
 then
         CurDir=${DIR:0:12}…${DIR:${#DIR}-15}
 else
