@@ -6,6 +6,9 @@ set nocompatible
 " Pathogen plugin setup
 call pathogen#infect()
 
+" Install Pathogen:
+" $ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schema
 if &t_Co > 1 || has("gui_running")
