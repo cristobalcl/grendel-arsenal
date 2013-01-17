@@ -34,12 +34,14 @@ sudo aptitude install yakuake
 || Delete until space || `ESC, DEL` ||
 || Delete until beggining || `CTRL+u` ||
 || Delete until end || `CTRL+k` ||
+|| Undo delete || `CTRL+y` ||
 || Swap chars || `CTRL+t` ||
 || Swap words || `ESC, t` ||
 || Undo || `CTRL+_` ||
 || Execute last command || `!!` ||
 || Execute previous one command || `!-2` ||
 || Execute previous before that || `!-3` ||
+|| Execute command number N || `!-N` ||
 || Exit || `CTRL+d` ||
 
 = Working with files and directories =
