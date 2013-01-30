@@ -38,7 +38,7 @@ alias there='cd "`xsel --clipboard`"'
 alias vims='TERM=xterm-256color vim -S Session.vim'
 alias vim='TERM=xterm-256color vim -p'
 
-alias lost='cat >> ~/lost.txt'
+alias lost='tail ~/lost.txt; (cat >> ~/lost.txt)'
 alias 7up='svn up'
 
 alias privateOn='encfs ~/Dropbox/.private/ ~/Privado'
