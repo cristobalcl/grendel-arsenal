@@ -18,7 +18,7 @@ rm "$(basename $cbr)"
 
 if [ "`find . ! -name . -prune -type f`" ]
 then
-        convert `find . ! -name . -prune -type f` "${cbr}.pdf"
+        convert `find . ! -name . -prune -type f` "${cbr}.pdf" # XXX FIXME Error with filenames with spaces!!!
 fi
 
 find -maxdepth 1 -mindepth 1 -type d | while read BOOK; do
