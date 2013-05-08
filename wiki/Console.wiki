@@ -234,7 +234,7 @@ dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
 sudo mkfs.ext4 debian_stable.raw
 mkdir bootstrap
 sudo mount -t auto -o loop debian_stable.raw bootstrap
-sudo debootstrap lenny bootstrap http://ftp.fr.debian.org/debian
+sudo debootstrap wheezy bootstrap http://ftp.fr.debian.org/debian
 }}}
 
 Mounting bootstrap:
