@@ -81,6 +81,12 @@ nmap <leader>l :set cursorline!<CR>
 set relativenumber                       " Relative line numbers
 " Switch relative line numbers
 nmap <leader>r :set relativenumber!<CR>
+"" No relative numbers when losing focus
+"au FocusLost * :set number
+"au FocusGained * :set relativenumber
+" No relative numbers in insert mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 " Switch line numbers
 nmap <leader>n :set number!<CR>
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
@@ -171,11 +177,11 @@ map <A-UP> gk
 imap <A-DOWN> <ESC>lgji
 imap <A-UP> <ESC>lgki
 
-" Switch window mappings
-nnoremap <A-Up> <c-w>k
-nnoremap <A-Down> <c-w>j
-nnoremap <A-Left> <c-w>h
-nnoremap <A-Right> <c-w>l
+"" Switch window mappings
+"nnoremap <A-Up> <c-w>k
+"nnoremap <A-Down> <c-w>j
+"nnoremap <A-Left> <c-w>h
+"nnoremap <A-Right> <c-w>l
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Edition
