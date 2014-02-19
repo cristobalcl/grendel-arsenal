@@ -25,6 +25,7 @@ def processCommandLine():
 	parser.add_argument("arg2", help="help for arg2")
 	parser.add_argument("-p", "--param", metavar="PARAM", dest="param", type=int, default=0, required=True, help="help for param")
 	parser.add_argument("-v", "--verbose", action="store_true")
+	parser.add_argument("--version", action="version", version="%(prog)s " + __version__)
 
 	return parser.parse_args()
 
