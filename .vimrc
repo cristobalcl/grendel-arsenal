@@ -67,12 +67,6 @@ imap <C-t> <Esc>:tabnew<CR>
 "imap <C-c> <Esc>:tabclose<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Title and status line
-set title
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set laststatus=2
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cursor
 set cursorline                           " Highlight cursor line
 "set scrolloff=3
@@ -364,7 +358,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTreeTabs
+" NERDTree and NERDTreeTabs
+let NERDTreeIgnore = ['\.pyc$']
+
 map <Leader>f <plug>NERDTreeTabsToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -385,3 +381,35 @@ let g:vimwiki_camel_case=0
 let g:vimwiki_list=[{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privado/vimwiki/private/html'},
 					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
 let g:vimwiki_browsers=['/usr/bin/google-chrome']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Word counting
+" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+let g:word_count="<unknown>"
+fun! WordCount()
+	return g:word_count
+endfun
+fun! UpdateWordCount()
+	let s:old_status = v:statusmsg
+	exe "silent normal g\<c-g>"
+	let s:word_count = str2nr(split(v:statusmsg)[11])
+	let v:statusmsg = s:old_status
+	let g:word_count = s:word_count
+endfun
+
+augroup WordCounter
+	au! CursorHold * call UpdateWordCount()
+	au! CursorHoldI * call UpdateWordCount()
+augroup END
+
+" how eager are you? (default is 4000 ms)
+"set updatetime=500
+
+" modify as you please...
+"set statusline=%{WordCount()}\ words
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Title and status line
+set title
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L,W=%{WordCount()}]
+set laststatus=2
