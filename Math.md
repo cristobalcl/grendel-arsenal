@@ -1,0 +1,123 @@
+
+
+# PyLab #
+
+## Install ##
+In Ubuntu:
+
+```
+sudo aptitude install python-matplotlib
+```
+
+## Sorting ##
+
+```
+a = csv2rec("results.csv", delimiter=" ")
+
+I = argsort(a, order=("column2", "column1")) # Indexes
+b = a[I,:]                                   # Ordered array
+```
+
+## Plotting CSV ##
+
+### In interactive mode ###
+Run PyLab:
+
+```
+$ ipython -pylab
+```
+
+Open CSV:
+
+```
+data = csv2rec("results.csv", delimiter=" ")
+```
+
+Print some data:
+
+```
+print data
+print data["name"]
+print data[1]
+```
+
+Create figure:
+
+```
+figure()
+```
+
+Plot a column:
+
+```
+plot(range(len(data)), data["column1"], "r.")
+```
+
+Add details:
+
+```
+xticks(range(len(data)), data["name"],)
+grid(".")
+ylabel("Y")
+xlabel("X")
+title("Hello world!")
+legend(("Column 1",), loc='best')
+```
+
+### Script mode ###
+
+**plot.py**:
+
+```
+from pylab import *
+
+data = csv2rec("results.csv", delimiter=" ")
+
+figure()
+
+plot(range(len(data)), data["Column1"], "r")
+plot(range(len(data)), data["Column2"], "g")
+plot(range(len(data)), data["Column3"], "b")
+
+xticks(range(len(data)), data["name"], rotation=45)
+grid(".")
+ylabel("Y")
+xlabel("X")
+title("Results")
+legend(("Column1", "Column2", "Column3"), loc='best')
+
+savefig("figure.pdf")
+```
+
+Run script:
+
+```
+$ python plot.py
+```
+
+## References ##
+
+  * [matplotlib](http://matplotlib.sourceforge.net/)
+  * [SciPy Course](http://www.rexx.com/~dkuhlman/scipy_course_01.html)
+  * [Mathesaurus](http://mathesaurus.sourceforge.net/)
+  * [NumPy for Matlab Users](http://www.scipy.org/NumPy_for_Matlab_Users)
+  * [Spyder](http://spyderlib.googlecode.com) (Scientific PYthon Development EnviRonment)
+
+# Scipy #
+
+## Install ##
+In Ubuntu:
+
+```
+sudo aptitude install python-scipy
+```
+
+# PyBrain #
+
+## Install ##
+```
+sudo aptitude install git-core python-setuptools
+git clone git://github.com/pybrain/pybrain.git
+cd pybrain
+sudo python setup.py install
+```

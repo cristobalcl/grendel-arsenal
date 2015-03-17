@@ -1,0 +1,261 @@
+
+
+# Introduction #
+
+Basic working with Vim, tips and tricks.
+
+# Modes #
+
+## Normal ##
+When you enter in Vim, you are in **normal** mode. You _can not_ insert text in normal mode, but move through texts, buffers, tabs,.. , and execute commands like copy and paste, search and replace, open and safe files, etc.
+
+Independently the mode you are, you always can return to normal mode pressing `ESC`.
+
+_Normally_ you _want_ to be in **normal** mode.
+
+## Insert ##
+From **normal** mode you can switch to **insert** mode to insert text, pressing `i` (for example). In **insert** mode everything you type will be inserted in the text as in any other text editor.
+
+There are many ways to switch to insert mode:
+  * Insert here: pressing `i`.
+  * Insert at the beginning of the line: pressing `I` (capital `i`).
+  * Insert after the character where the cursor is: pressing `a`.
+  * Insert at the end of the line: pressing `A`.
+  * Insert an empty line below the line the cursor is, and insert at it: pressing `o`.
+  * Insert an empty line over the line the cursor is, and insert at it: pressing `O` (capital `o`).
+
+## Visual ##
+Visual modes:
+  * Visual: `v`
+  * Lines: `V`
+  * Block: `Ctrl+v`
+  * Repeat last selection: `gv`
+
+# Files #
+
+## Open a file ##
+From command line:
+```
+vim file.txt
+```
+
+From command line and go to a line:
+```
+vim file.txt +26
+```
+
+From normal mode:
+```
+:e file.txt
+```
+
+## Insert content of a file ##
+```
+:r [FILENAME]
+```
+
+## Convert Unix file to Windows ##
+```
+:set ff=dos
+```
+
+## Convert Windows file to Unix ##
+```
+:set ff=unix
+```
+
+# Movement #
+
+| Move last edition | `. |
+|:------------------|:---|
+| Last position before jump | `` |
+| Move back | `<C-o>` |
+
+# Edition #
+
+| Change inner word | `ciw` |
+|:------------------|:------|
+| Change double quoted sentence | `ci"` |
+| Change parentheses sentence | `ci(` |
+
+## Insert character by its number value ##
+```
+<C-V>, [Number in decimal, octal or hexadecimal]
+```
+
+  * [Reference](http://vimdoc.sourceforge.net/htmldoc/insert.html#i_CTRL-V_digit)
+
+## Increment/Decrement ##
+| Decrement | `<C-a>` |
+|:----------|:--------|
+| Increment | `<C-x>` |
+
+# Repetitions #
+
+## Repeat last edition ##
+In normal mode, press `.` (dot).
+
+Example:
+  * You have this text:
+```
+Hello world!
+This is a test.
+Goodbye.
+```
+  * In normal mode (go with `ESC`) press:
+```
+I// <ESC>
+```
+  * With that you have inserted "`//`" at the beginning of the line that the cursor is.
+  * Now, you want to repeat the same action of deleting in the other two lines. Go to another line and press:
+```
+.
+```
+  * Same in the last line.
+
+# Buffers #
+
+| List | `:ls` |
+|:-----|:------|
+| Go to | `:b [NUMBER or NAME]` or [NUMBER](NUMBER.md)Ctrl+6|
+| Previous | `:bp` |
+| Next | `:bn` |
+| Switch | Ctrl+6 |
+| Close | `:bd` |
+
+# Tabs #
+
+| Open files in different tabs from command line | `vim -p [FILES]` |
+|:-----------------------------------------------|:-----------------|
+| Open file in new tab | `:tabe [FILE]` |
+| Open file in new tab or jump to it if it's open | `:tab drop [FILE]` |
+| Find file and open in new tab | `:tabfind [FILE]` |
+| Open file below cursor in new tab | Ctrl+W gf |
+| Open each buffer in one tab | `:tab sball` |
+| Open this buffer in other tab | `:tab sp` |
+| Move window to new tab | Ctrl+W T |
+| Close window (if there is no other window the tab is closed) | Ctrl+W C |
+| Close tab | `:tabc` |
+| Close all others tabs | `:tabo` |
+| Duplicate buffer in new tab | Ctrl+W s Ctrl+W T |
+
+## Navigation ##
+
+| List tabs | `:tabs` |
+|:----------|:--------|
+| Previous tab | `gT` or Ctrl+PageUp |
+| Next tab | `gt` or Ctrl+PageDown |
+| Tab number [i](i.md) | `[i]gt` |
+
+## Commands ##
+
+| Replace in all files of all tabs | `:tabdo %s/foo/bar/gc` |
+|:---------------------------------|:-----------------------|
+
+## References ##
+  * [Using tab pages](http://vim.wikia.com/wiki/Using_tab_pages)
+
+# Sessions #
+
+| Save session to `Session.vim` | `:mks!` |
+|:------------------------------|:--------|
+| Load `Session.vim` | `:so Session.vim` |
+
+# External commands #
+
+## Shell ##
+```
+:sh
+```
+
+## Execute external command ##
+```
+:![COMMAND]
+```
+
+## Insert command output ##
+```
+:r![COMMAND]
+```
+
+Or
+
+```
+:.![COMMAND]
+```
+
+## Execute command on the editing file ##
+Use `%` as the filename. For example, to count how many words are in the file you are editing:
+```
+:!wc %
+```
+
+# Tips #
+
+## Remove ^M characters ##
+```
+:%s/\r//g
+```
+
+Reference:
+  * [Como sacar los retornos de carro de DOS ^M con Vim](http://www.matware.com.ar/vim/como-sacar-los-retornos-de-carro-de-dos-m-con-vim.html)
+
+## Sort ##
+```
+:sort
+```
+
+## Count words in LaTeX ##
+```
+:!texcount -1 %
+```
+
+## Edit README files (80 columns) ##
+```
+:set formatoptions=tcqw
+gggqG
+```
+
+  * [Reference](http://stackoverflow.com/questions/938105/readme-80-character-limit-or-just-let-the-users-editor-handle-it)
+
+## Convert spanish characters to HTML ##
+
+```
+:%s/á/\&aacute;/g
+:%s/é/\&eacute;/g
+:%s/í/\&iacute;/g
+:%s/ó/\&oacute;/g
+:%s/ú/\&uacute;/g
+:%s/Á/\&Aacute;/g
+:%s/É/\&Eacute;/g
+:%s/Í/\&Iacute;/g
+:%s/Ó/\&Oacute;/g
+:%s/Ú/\&Uacute;/g
+:%s/ñ/\&ntilde;/g
+:%s/Ñ/\&Ntilde;/g
+```
+
+# Useful plugins #
+  * [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332) Install and unistall vim plugins easily.
+  * [OmniCppComplete](http://www.vim.org/scripts/script.php?script_id=1520) (see [C++ code completion](http://vim.wikia.com/wiki/VimTip1608) for configuration instructions).
+  * [taglist.vim](http://vim.sourceforge.net/scripts/script.php?script_id=273)
+  * [Surround](http://www.vim.org/scripts/script.php?script_id=1697)
+  * [UltiSnip](http://www.vim.org/scripts/script.php?script_id=2715)
+  * [NerdTree](http://www.vim.org/scripts/script.php?script_id=1658)
+  * [NerdTreeTabs](https://github.com/jistr/vim-nerdtree-tabs)
+  * [YankRing](http://www.vim.org/scripts/script.php?script_id=1234)
+  * [ack.vim](http://www.vim.org/scripts/script.php?script_id=2572) ([fork](https://github.com/tyok/ack.vim))
+  * [VimRepeat](https://github.com/tpope/vim-repeat)
+  * [Gundo](http://sjl.bitbucket.org/gundo.vim/)
+  * [Matrix](http://www.vim.org/scripts/script.php?script_id=1189)
+
+# Links #
+  * http://mislav.uniqpath.com/2011/12/vim-revisited/
+  * [Best of Vim Tips](http://www.rayninfo.co.uk/vimtips.html)
+  * [Configuring Vim right](http://items.sjbach.com/319/configuring-vim-right)
+  * [Beyond vi](http://e-texteditor.com/blog/2010/beyond-vi)
+  * [How I boosted my Vim](http://nvie.com/posts/how-i-boosted-my-vim/)
+  * [Coming Home to Vim](http://stevelosh.com/blog/2010/09/coming-home-to-vim/)
+  * [256 Terminal colors and their 24bit equivalent](http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html)
+  * [http://code.google.com/p/vimcolorschemetest/
+vimcolorschemetest]

@@ -1,0 +1,283 @@
+
+
+# Introduction #
+
+Daily working with the Linux console, i.e. [Bash](http://en.wikipedia.org/wiki/Bash) shell in an [GNU](http://en.wikipedia.org/wiki/GNU)/[Linux](http://en.wikipedia.org/wiki/Linux) operating system. And perhaps inside the [Konsole](http://en.wikipedia.org/wiki/Konsole) terminal or [Yakuake](http://en.wikipedia.org/wiki/Yakuake).
+
+# Yakuake #
+
+## Installation ##
+Yakuake:
+```
+sudo aptitude install yakuake
+```
+
+## Usage ##
+
+| Execute Yakuake (only first time) | `Alt+F2`, write "yakuake" and `INTRO`. |
+|:----------------------------------|:---------------------------------------|
+| Open Yakuake | `F12` |
+| Create new tabs | `CTRL+n` |
+| Close tab (bash logout) | `CTRL+d` |
+| Navigate throw tabs | `SHIFT`+`Left` or `SHIFT`+`Right` |
+| Split | `CTRL`+`SHIFT`+t |
+| Close window | `CTRL`+`SHIFT`+w |
+| Change window | `SHIFT`+`TAB` |
+
+# Bash keys #
+
+| Auto-complete | `TAB` |
+|:--------------|:------|
+| Search in history | `CTRL+r` |
+| Delete word | `CTRL+w` |
+| Delete until space | `ESC, DEL` |
+| Delete until beggining | `CTRL+u` |
+| Delete until end | `CTRL+k` |
+| Undo delete | `CTRL+y` |
+| Swap chars | `CTRL+t` |
+| Swap words | `ESC, t` |
+| Undo | `CTRL+_` |
+| Execute last command | `!!` |
+| Execute previous one command | `!-2` |
+| Execute previous before that | `!-3` |
+| Execute command number N | `!-N` |
+| Exit | `CTRL+d` |
+
+# Working with files and directories #
+
+## Info about a file ##
+
+| Number of lines, words and characters | `wc [file]` |
+|:--------------------------------------|:------------|
+| Who is using a file | `fuser -muv [file]` |
+
+## Listing files ##
+
+| List files, one file per row | `ls -1` |
+|:-----------------------------|:--------|
+| List directories and their size | `du * -sh` |
+| List directories and sort by size | `du * -s | sort -n` |
+
+## Manipulate files ##
+
+| Rename (in Ubuntu) | `rename 's/[expr1]/[expr2]/[g]' [files]` |
+|:-------------------|:-----------------------------------------|
+
+## Patches ##
+
+| Apply | `patch -p1 < file.patch` |
+|:------|:-------------------------|
+| Undone | `patch -R < file.patch` |
+
+# Searching #
+
+## Content in files ##
+
+| Find _EXP_ in this directory | `grep EXP *` |
+|:-----------------------------|:-------------|
+| Find _EXP_ recursively from _PATH_ | `grep EXP PATH -R` |
+| Find lines without _EXP_ | `grep EXP . -v` |
+| Replace _EXP1_ for _EXP2_ in file _FILE_ | `sed 's/EXP1/EXP2/g' _FILE_ > _FILE_` |
+| Multiple replaces | `sed 's/EXP11/EXP21/g;...;s/EXP1n/EXP2n/g' _FILE_ > _FILE_` |
+
+## Files ##
+
+| Find file _FILENAME_ recursively from _PATH_ | `find PATH -iname FILENAME` |
+|:---------------------------------------------|:----------------------------|
+
+# System #
+| Linux version | `lsb_release -a` |
+|:--------------|:-----------------|
+| CPU | `cat /proc/cpuinfo` |
+| Memory | `cat /proc/meminfo` |
+| 32 or 64 bits | `uname -m` or `file /usr/bin/file` |
+
+# Scripting #
+
+## Variables ##
+
+### File names, paths, extensions ###
+```
+FULL=/path/to/file.ext
+FILENAME=$(basename $FULL)
+NAME=${FILENAME%.*}
+EXTENSION=${FILENAME##*.}
+```
+
+## Tests ##
+File exists:
+```
+if [ -e "FILENAME" ]
+then
+  echo "FILENAME is a block device."
+fi
+```
+
+Regular file:
+```
+if [ -f "FILENAME" ]
+then
+  echo "FILENAME is a regular file."
+fi
+```
+
+File does not exist:
+```
+if [ ! -f "FILENAME" ]
+then
+  echo "FILENAME does not exist."
+fi
+```
+
+Not zero size:
+```
+if [ -s "FILENAME" ]
+then
+  echo "FILENAME is not zero size."
+fi
+```
+
+Directory:
+```
+if [ -d "FILENAME" ]
+then
+  echo "FILENAME is a directory."
+fi
+```
+
+## Loops ##
+For loop syntax:
+```
+#!/bin/bash
+for i in {1..5}
+do
+   echo "Hello $i world!"
+done
+```
+
+In one line:
+```
+for i in {1..5}; do echo "Welcome $i times"; done
+```
+
+For over find:
+```
+for f in `find -iname "[FILENAME]"`; do cat $f; done
+```
+
+Loop over find (files edited today in the example) with files with spaces using **while read**:
+```
+find -maxdepth 1 -type f -iname "*.py" -mtime -1 | while read f; do echo $f; done
+```
+
+References:
+  * [Bash For Loop Examples](http://www.cyberciti.biz/faq/bash-for-loop/)
+
+# Internet #
+
+## Type a web ##
+```
+wget -qO- [URL]
+```
+
+# Multimedia #
+
+## Play MIDI ##
+Install `timidity`:
+```
+sudo aptitude install timidity
+```
+
+Play MIDI file:
+```
+timidity [file.mid]
+```
+
+# Building and installing #
+
+## Aptitude ##
+| Update packages database | `sudo aptitude update` |
+|:-------------------------|:-----------------------|
+| Search package | `sudo aptitude search [NAME]` |
+| Install package | `sudo aptitude install [PACKAGE NAMES]` |
+| Remove package | `sudo aptitude purge [PACKAGE NAMES]` |
+| Upgrade packages | `sudo aptitude update && sudo aptitude safe-upgrade` |
+| Hold package | `sudo aptitude hold [PACKAGE NAMES]` |
+
+## Make ##
+
+### Verbose output ###
+```
+make VERBOSE=1
+```
+
+### Install ###
+```
+make install
+```
+
+To a path:
+
+```
+make install DESTDIR="/absolute/path/"
+```
+
+## Install .deb ##
+```
+sudo dpkg -i program.deb
+```
+
+# Advanced #
+
+## Debian Bootstrap ##
+Installing `debootstrap`:
+```
+sudo aptitude install debootstrap
+```
+
+Creating bootstrap:
+```
+dd if=/dev/zero of=debian_stable.raw bs=1M count=10000
+sudo mkfs.ext4 debian_stable.raw
+mkdir bootstrap
+sudo mount -t auto -o loop debian_stable.raw bootstrap
+sudo debootstrap wheezy bootstrap http://ftp.fr.debian.org/debian
+```
+
+Mounting bootstrap:
+```
+#sudo mount -t auto -o loop debian_stable.raw bootstrap
+sudo chroot bootstrap
+```
+
+Setting up installation:
+```
+#echo "deb http://ftp.fr.debian.org/debian wheezy main contrib non-free" >> /etc/apt/sources.list
+apt-get update && apt-get dist-upgrade
+#mount -t proc proc /proc && sudo mount -t sysfs sysfs /sys
+#echo "proc /proc proc rw 0 0" >> /etc/fstab
+#echo "sysfs /sys sysfs rw 0 0" >> /etc/fstab
+#mount -a
+```
+
+X's:
+```
+# From host:
+sudo mount --bind /tmp bootstrap/tmp/
+xhost +
+```
+
+Exit:
+```
+#umount -a
+#umount /proc && umount /sys
+exit
+sudo umount bootstrap
+```
+
+References:
+  * [Running 32-bit X Windows application on 64-bit system using bind mount in Linux](http://linux.koolsolutions.com/2009/06/05/howto-running-32-bit-x-windows-application-in-a-bootstrap-system-using-bind-mount/)
+
+# More references #
+
+**[50 Most Frequently Used UNIX / Linux Commands (With Examples)](http://www.thegeekstuff.com/2010/11/50-linux-commands/?a)** [sed script for extract URLs from HTML](http://sed.sourceforge.net/grabbag/scripts/list_urls.sed)

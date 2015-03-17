@@ -1,0 +1,23 @@
+# Tips #
+
+## Convert video to image frames ##
+```
+ffmpeg -i video_input.mp4 frame_%04d.png
+```
+
+## Extract audio from video ##
+```
+ffmpeg -i video_input.mp4 -ab 128 -ar 44100 audio_output.ogg
+```
+
+# Compile #
+```
+sudo aptitude build-dep ffmpeg
+svn checkout svn://svn.ffmpeg.org/ffmpeg/trunk ffmpeg.svn
+cd ffmpeg.svn
+./configure
+make
+```
+
+# References #
+https://wiki.archlinux.org/index.php/FFmpeg
