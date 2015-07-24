@@ -4,10 +4,25 @@ set nocompatible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen plugin setup
-call pathogen#infect()
-
+" call pathogen#infect()
+"
 " Install Pathogen:
 " $ mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle plugin setup
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Install Vundle:
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle 
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+filetype on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color schema
@@ -122,15 +137,21 @@ nmap <BS> :pop<CR>
 "nmap <buffer> <C-F8> :tprev<cr>
 
 " Identation
-"set smartindent
-set autoindent shiftwidth=4
-set shiftround
-set smarttab
-"set expandtab
-"set textwidth=79
+""set smartindent
+"set autoindent
+
 set tabstop=4
 set softtabstop=4
-set copyindent
+set shiftwidth=4
+set noexpandtab
+
+" The same for Python
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
+"set shiftround
+"set smarttab
+""set textwidth=79
+"set copyindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
@@ -229,6 +250,9 @@ map <C-F5> :setlocal spell<CR>
 map <M-F5> z=
 " Show suggestions
 imap <M-F5> <ESC>z=
+
+nmap <c-s> :setlocal spell spelllang=es<cr>
+nmap <c-g> :setlocal spell spelllang=en_us<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Abbreviations
@@ -382,34 +406,35 @@ let g:vimwiki_list=[{'path': '~/Privado/vimwiki/private', 'path_html': '~/Privad
 					\{'path': '~/Dropbox/vimwiki/public', 'path_html': '~/Dropbox/Public/wiki/html'}]
 let g:vimwiki_browsers=['/usr/bin/google-chrome']
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Word counting
-" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-let g:word_count="<unknown>"
-fun! WordCount()
-	return g:word_count
-endfun
-fun! UpdateWordCount()
-	let s:old_status = v:statusmsg
-	exe "silent normal g\<c-g>"
-	let s:word_count = str2nr(split(v:statusmsg)[11])
-	let v:statusmsg = s:old_status
-	let g:word_count = s:word_count
-endfun
-
-augroup WordCounter
-	au! CursorHold * call UpdateWordCount()
-	au! CursorHoldI * call UpdateWordCount()
-augroup END
-
-" how eager are you? (default is 4000 ms)
-"set updatetime=500
-
-" modify as you please...
-"set statusline=%{WordCount()}\ words
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Word counting
+"" http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+"let g:word_count="<unknown>"
+"fun! WordCount()
+"	return g:word_count
+"endfun
+"fun! UpdateWordCount()
+"	let s:old_status = v:statusmsg
+"	exe "silent normal g\<c-g>"
+"	let s:word_count = str2nr(split(v:statusmsg)[11])
+"	let v:statusmsg = s:old_status
+"	let g:word_count = s:word_count
+"endfun
+"
+"augroup WordCounter
+"	au! CursorHold * call UpdateWordCount()
+"	au! CursorHoldI * call UpdateWordCount()
+"augroup END
+"
+"" how eager are you? (default is 4000 ms)
+""set updatetime=500
+"
+"" modify as you please...
+""set statusline=%{WordCount()}\ words
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Title and status line
 set title
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L,W=%{WordCount()}]
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L,W=%{WordCount()}]
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%04.8b]\ [HEX=\%04.4B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set laststatus=2
